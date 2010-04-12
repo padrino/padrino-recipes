@@ -1,5 +1,7 @@
 # Template to get Coderay on Padrino
-
+# prereqs:
+# sudo gem install coderay
+# sudo gem install rack-coderay
 CODERAY = <<-CODERAY
     require 'rack/coderay'
     app.use Rack::Coderay,
