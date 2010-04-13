@@ -16,14 +16,14 @@ The templates here work with the templates fork of padrino-framework. To run the
 The templates are seperated into two types: 
 
 === Plugins
-The plugin folders contains templates that can be ran to 'plugin' certain libraries into the padrino application. Currently included are:
+The plugin folders contains templates that can be ran to 'plugin' certain libraries into the padrino application. These file follow the convention of having '_plugin' appended to the name.(i.e coderay_plugin.rb) Currently included are:
   * coderay - via rack-coderay
   * hoptoad - via rack_hoptoad
 
 
 === Templates
-The templates folder contains full project generation templates. Included template are:
-  * sample_blog - sample blog tutorial from http://www.padrinorb.com/guides/blog-tutorial
+The templates folder contains full project generation templates. These files follow the convention of having '_template' appended to the name. (i.e sampleblog_template.rb) Included template are:
+  * sampleblog - sample blog tutorial from http://www.padrinorb.com/guides/blog-tutorial
 
 == Contribute
 
