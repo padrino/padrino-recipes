@@ -2,6 +2,7 @@
 # prereqs:
 # sudo gem install coderay
 # sudo gem install rack-coderay
+# http://github.com/webficient/rack-coderay
 CODERAY = <<-CODERAY
     require 'rack/coderay'
     app.use Rack::Coderay,
