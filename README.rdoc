@@ -17,9 +17,10 @@ The templates are seperated into two types:
 
 === Plugins
 The plugin folders contains templates that can be ran to 'plugin' certain libraries into the padrino application. These file follow the convention of having '_plugin' appended to the name.(i.e coderay_plugin.rb) Currently included are:
-  * coderay - via rack-coderay
-  * hoptoad - via rack_hoptoad
-
+  * coderay       - via rack-coderay
+  * hoptoad       - via rack_hoptoad
+  * maintenance   - via rack-maintenance
+  * openid        - via rack-openid
 
 === Templates
 The templates folder contains full project generation templates. These files follow the convention of having '_template' appended to the name. (i.e sampleblog_template.rb) Included template are:
