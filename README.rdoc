@@ -21,6 +21,7 @@ The plugin folders contains templates that can be ran to 'plugin' certain librar
   * hoptoad       - via rack_hoptoad
   * maintenance   - via rack-maintenance
   * openid        - via rack-openid
+  * carrierwave   - via carrierwave
 
 === Templates
 The templates folder contains full project generation templates. These files follow the convention of having '_template' appended to the name. (i.e sampleblog_template.rb) Included template are:
