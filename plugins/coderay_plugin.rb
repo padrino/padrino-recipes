@@ -11,4 +11,4 @@ CODERAY = <<-CODERAY
 CODERAY
 require_dependencies 'coderay', 'rack-coderay'
 initializer :coderay,CODERAY
-get 'http://coderay.rubychan.de/stylesheets/coderay.css', 'public/stylesheets/coderay.css'
+get 'http://coderay.rubychan.de/stylesheets/coderay.css', destination_root('public/stylesheets/coderay.css')

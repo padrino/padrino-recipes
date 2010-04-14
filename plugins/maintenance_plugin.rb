@@ -16,4 +16,4 @@ PAGE = <<-PAGE
 PAGE
 require_dependencies 'rack-maintenance'
 initializer :maintenance,MAINT
-create_file 'public/maintenance.html',PAGE
+create_file destination_root('public/maintenance.html'),PAGE
