@@ -25,11 +25,15 @@ class Uploader < CarrierWave::Uploader::Base
   # 
   # storage :right_s3
 
+  
+  ## Manually set root
+  def root; File.join(Padrino.root,"public/"); end
+
   ##
   # Directory where uploaded files will be stored (default is /public/uploads)
   # 
   def store_dir
-    Padrino.root('public/uploads')
+    'images/uploads'
   end
 
   ##
