@@ -22,6 +22,8 @@ The plugin folders contains templates that can be ran to 'plugin' certain librar
   * maintenance   - via rack-maintenance
   * openid        - via rack-openid
   * carrierwave   - via carrierwave
+  * twitter-login - via twitter-login
+  * payment       - via rack-payment
 
 === Templates
 The templates folder contains full project generation templates. These files follow the convention of having '_template' appended to the name. (i.e sampleblog_template.rb) Included template are:
