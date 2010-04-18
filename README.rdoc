@@ -24,7 +24,8 @@ The plugin folders contains templates that can be ran to 'plugin' certain librar
   * carrierwave   - via carrierwave
   * twitter-login - via twitter-login
   * payment       - via rack-payment
-  * blueprint     - via blueprint
+  * blueprint     - via blueprint css
+  * tripoli       - via tripoli css
 
 === Templates
 The templates folder contains full project generation templates. These files follow the convention of having '_template' appended to the name. (i.e sampleblog_template.rb) Included template are:
