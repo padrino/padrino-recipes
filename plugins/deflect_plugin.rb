@@ -4,7 +4,6 @@
 # http://github.com/rack/rack-contrib/
 # http://github.com/rack/rack-contrib/blob/master/lib/rack/contrib/deflect.rb
 CONTRIB = <<-CONTRIB
-    require 'rack/contrib'
     app.use Rack::Deflect,
       :log => $stdout, 
       :request_threshold => 20, 

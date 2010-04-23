@@ -3,7 +3,6 @@
 # sudo gem install rack-payment
 # http://github.com/devfu/rack-payment
 PAYMENT = <<-PAYMENT
-    require 'rack/payment'
     app.use Rack::Payment, 
       :gateway   => 'paypal', 
       :login     => 'bob', 
@@ -12,5 +11,5 @@ PAYMENT = <<-PAYMENT
       :test_mode => true # during real usage, set this to false
     app.helpers Rack::Payment::Methods
 PAYMENT
-require_dependencies 'rack-payment'
+require_dependencies 'rack-payment', :require => 'rack/payment'
 initializer :payment,PAYMENT

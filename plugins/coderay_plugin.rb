@@ -4,7 +4,6 @@
 # sudo gem install rack-coderay
 # http://github.com/webficient/rack-coderay
 CODERAY = <<-CODERAY
-    require 'rack/coderay'
     app.use Rack::Coderay,
         "//pre[@lang]",
         :line_numbers => :table

@@ -3,7 +3,6 @@
 # sudo gem install twitter-login
 # http://github.com/mislav/twitter-login
 TWITTER = <<-TWITTER
-    require 'twitter/login'
     app.use Twitter::Login, 
       :consumer_key => 'KEY', 
       :secret => 'SECRET'
@@ -11,6 +10,6 @@ TWITTER = <<-TWITTER
       # :return_to => '/'
     app.helpers Twitter::Login::Helpers
 TWITTER
-require_dependencies 'twitter-login', :require_as => 'twitter/login'
+require_dependencies 'twitter-login', :require => 'twitter/login'
 initializer :twitter_login,TWITTER
 inject_into_file destination_root('app/app.rb'),"    enable :sessions\n", :after => "configure do\n"

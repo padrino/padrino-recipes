@@ -4,7 +4,6 @@
 # http://github.com/rack/rack-contrib/
 # http://github.com/rack/rack-contrib/blob/master/lib/rack/contrib/access.rb
 CONTRIB = <<-CONTRIB
-    require 'rack/contrib'
     app.use Rack::Access, 
       '/backend' => [ '127.0.0.1',  '192.168.1.0/24' ]
 CONTRIB

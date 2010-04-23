@@ -3,7 +3,6 @@
 # sudo gem install rack-maintenance
 # http://github.com/ddollar/rack-maintenance
 MAINT = <<-MAINT
-    require 'rack/maintenance'
     app.use Rack::Maintenance,
        :file => Padrino.root('public/maintenance.html')
        # :env  => 'MAINTENANCE'
@@ -14,6 +13,6 @@ PAGE = <<-PAGE
 <body><h1> This Site is Currently Under Maintenance!</h1>
 </html>
 PAGE
-require_dependencies 'rack-maintenance'
+require_dependencies 'rack-maintenance', :require => 'rack/maintenance'
 initializer :maintenance,MAINT
 create_file destination_root('public/maintenance.html'),PAGE

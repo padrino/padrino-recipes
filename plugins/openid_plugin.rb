@@ -3,7 +3,6 @@
 # sudo gem install rack-openid
 # http://github.com/josh/rack-openid
 OPENID = <<-OPENID
-    require 'rack/openid'
     app.use Rack::Session::Cookie
     app.use Rack::OpenID
 OPENID
@@ -30,7 +29,7 @@ FORM = <<-FORM
   </p>
 <% end %>
 FORM
-require_dependencies 'rack-openid'
+require_dependencies 'rack-openid', :require => 'rack/openid'
 initializer :openid,OPENID
 generate :controller, "openid get:login post:login"
 inject_into_file destination_root('app/controllers/openid.rb'), "   render 'openid/login'\n", :after => "get :login do\n"
