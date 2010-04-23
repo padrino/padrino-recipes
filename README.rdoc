@@ -28,6 +28,7 @@ The plugin folders contains templates that can be ran to 'plugin' certain librar
   * tripoli       - Tripoli CSS
   * access        - Access Restriction via rack-contrib
   * deflect       - Deflect(DOS protection) via rack-contrib
+  * recaptcha     - CAPTCHA verification using RECAPTCHA API via rack-recaptcha
 
 === Templates
 The templates folder contains full project generation templates. These files follow the convention of having '_template' appended to the name. (i.e sampleblog_template.rb) Included template are:
