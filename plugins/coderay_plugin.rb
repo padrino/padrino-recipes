@@ -8,6 +8,7 @@ CODERAY = <<-CODERAY
         "//pre[@lang]",
         :line_numbers => :table
 CODERAY
-require_dependencies 'coderay', 'rack-coderay'
+require_dependencies 'coderay'
+require_dependencies 'rack-coderay', :require => 'rack/coderay'
 initializer :coderay,CODERAY
 get 'http://coderay.rubychan.de/stylesheets/coderay.css', destination_root('public/stylesheets/coderay.css')
