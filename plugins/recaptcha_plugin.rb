@@ -2,6 +2,8 @@
 # prereqs:
 # sudo gem install rack-recaptcha
 # http://github.com/achiu/rack-recaptcha
+# NOTE:
+# if you have another sub app in the application, you must register in the apps app.rb
 RECAPTCHA = <<-RECAPTCHA
     app.use Rack::Recaptcha,
       :private_key => "YOUR_PRIVATE_KEY",
