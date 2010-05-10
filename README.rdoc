@@ -11,7 +11,13 @@ building upon the Sinatra philosophies and foundation.
 
 The templates here work with the templates fork of padrino-framework. To run them:
 
-  $ padrino-gen template [projectname] [template_path]
+To run plugin,
+
+  my_project $ padrino-gen plugin [template_path]
+  
+To run a template,
+
+  $ padrino-gen project my_project --template [template_path]
   
 The templates are seperated into two types: 
 
