@@ -18,5 +18,5 @@ CONTRIB = <<-CONTRIB
     #   :whitelist          # Array of remote addresses which bypass Deflect. NOTE: this does not block others
     #   :blacklist          # Array of remote addresses immediately considered malicious
 CONTRIB
-require_dependencies 'rack-contrib', :require => 'rack/contrib'
+require_dependencies 'rack-contrib', :require => 'rack/contrib', :git => 'git://github.com/rack/rack-contrib.git'
 initializer :deflect,CONTRIB
