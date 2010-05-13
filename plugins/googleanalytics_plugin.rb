@@ -1,4 +1,4 @@
-# Template to get Recaptcha on Padrino
+# Template to get GoogleAnalytics on Padrino
 # prereqs:
 # sudo gem install rack-google-analytics
 # http://github.com/leehambley/rack-google-analytics
@@ -8,4 +8,4 @@ ANALYTICS = <<-ANALYTICS
       :tracker => 'UA-xxxxxx-x'
 ANALYTICS
 require_dependencies 'rack-google-analytics'
-initializer :analytics,ANALYTICS
+initializer :analytics, ANALYTICS
