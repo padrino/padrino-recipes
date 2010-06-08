@@ -43,6 +43,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   codehighlighter   - Code Highlighting via rack-codehighlighter
 *   coffee            - CoffeeScript plugin via rack-coffee
 *   bug               - rack-bug plugin
+*   omniauth          - Authentication Plugin for OAuth2, Facebook, Twitter, Campfire via omniauth
 
 ### Templates
 The templates folder contains full project generation templates. These files follow the convention of having *_template* appended to the name. (i.e __sampleblog_template.rb__) Included template are:  
