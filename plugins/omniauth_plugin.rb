@@ -10,5 +10,5 @@ OMNIAUTH = <<-OMNIAUTH
       # provider :basecamp
     end
 OMNIAUTH
-require_dependencies 'omniauth', :git => 'git://github.com/achiu/omniauth.git'
+require_dependencies 'omniauth'
 initializer :omniauth, OMNIAUTH
