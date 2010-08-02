@@ -1,7 +1,9 @@
+##
 # Maintanence plugin on Padrino
 # prereqs:
 # sudo gem install rack-maintenance
 # http://github.com/ddollar/rack-maintenance
+#
 MAINT = <<-MAINT
     app.use Rack::Maintenance,
        :file => Padrino.root('public/maintenance.html')
@@ -14,5 +16,5 @@ PAGE = <<-PAGE
 </html>
 PAGE
 require_dependencies 'rack-maintenance', :require => 'rack/maintenance'
-initializer :maintenance,MAINT
-create_file destination_root('public/maintenance.html'),PAGE
+initializer :maintenance, MAINT
+create_file destination_root('public/maintenance.html'), PAGE

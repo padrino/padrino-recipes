@@ -1,7 +1,9 @@
+##
 # Template for OpenID on Padrino
 # prereqs:
 # sudo gem install rack-openid
 # http://github.com/josh/rack-openid
+#
 OPENID = <<-OPENID
     app.use Rack::Session::Cookie
     app.use Rack::OpenID
@@ -30,8 +32,8 @@ FORM = <<-FORM
 <% end %>
 FORM
 require_dependencies 'rack-openid', :require => 'rack/openid'
-initializer :openid,OPENID
+initializer :openid, OPENID
 generate :controller, "openid get:login post:login"
 inject_into_file destination_root('app/controllers/openid.rb'), "   render 'openid/login'\n", :after => "get :login do\n"
 inject_into_file destination_root('app/controllers/openid.rb'), POST, :after => "post :login do\n"
-create_file destination_root('app/views/openid/login.erb'),FORM
+create_file destination_root('app/views/openid/login.erb'), FORM

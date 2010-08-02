@@ -1,13 +1,15 @@
+##
 # Deflect Plugin via rack-contrib on Padrino
 # prereqs:
 # sudo gem install rack-contrib
 # http://github.com/rack/rack-contrib/
 # http://github.com/rack/rack-contrib/blob/master/lib/rack/contrib/deflect.rb
+#
 CONTRIB = <<-CONTRIB
     app.use Rack::Deflect,
-      :log => $stdout, 
-      :request_threshold => 20, 
-      :interval => 2, 
+      :log => $stdout,
+      :request_threshold => 20,
+      :interval => 2,
       :block_duration => 60
     #   :log                # When false logging will be bypassed, otherwise pass an object responding to #puts
     #   :log_format         # Alter the logging format
@@ -19,4 +21,4 @@ CONTRIB = <<-CONTRIB
     #   :blacklist          # Array of remote addresses immediately considered malicious
 CONTRIB
 require_dependencies 'rack-contrib', :require => 'rack/contrib', :git => 'git://github.com/rack/rack-contrib.git'
-initializer :deflect,CONTRIB
+initializer :deflect, CONTRIB

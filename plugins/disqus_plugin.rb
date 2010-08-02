@@ -1,9 +1,11 @@
+##
 # Template to get Disqus on Padrino
 # prereqs:
 # sudo gem install disqus
 # http://github.com/norman/disqus
 # NOTE:
 # please see the readme of disqus for additional setup info.
+#
 DISQUS = <<-DISQUS
     # Configure it
     #

@@ -1,8 +1,9 @@
+##
 # Carrierwave plugin for Padrino
 # sudo gem install carrierwave
 # http://github.com/jnicklas/carrierwave
-
-UPLOADER =<<-UPLOADER
+#
+UPLOADER = <<-UPLOADER
 class Uploader < CarrierWave::Uploader::Base
 
   ##
@@ -14,38 +15,38 @@ class Uploader < CarrierWave::Uploader::Base
 
   ##
   # Storage type
-  # 
+  #
   storage :file
-  # 
+  #
   # configure do |config|
   #   config.s3_access_key_id = 'AKIAJBPCWSJNLHOPAKDQ'
   #   config.s3_secret_access_key = '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'
   #   config.s3_bucket = 'assets-web'
   # end
-  # 
+  #
   # storage :right_s3
 
-  
+
   ## Manually set root
   def root; File.join(Padrino.root,"public/"); end
 
   ##
   # Directory where uploaded files will be stored (default is /public/uploads)
-  # 
+  #
   def store_dir
     'images/uploads'
   end
 
   ##
   # Directory where uploaded temp files will be stored (default is [root]/tmp)
-  # 
+  #
   def cache_dir
     Padrino.root("tmp")
   end
 
   ##
   # Default URL as a default if there hasn't been a file uploaded
-  # 
+  #
   # def default_url
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
@@ -64,7 +65,7 @@ class Uploader < CarrierWave::Uploader::Base
 
   ##
   # Create different versions of your uploaded files
-  # 
+  #
   # version :header do
   #   process :resize_to_fill => [940, 250]
   #   version :thumb do
@@ -73,14 +74,14 @@ class Uploader < CarrierWave::Uploader::Base
   # end
   ##
   # White list of extensions which are allowed to be uploaded:
-  # 
+  #
   def extension_white_list
     %w(jpg jpeg gif png)
   end
 
   ##
   # Override the filename of the uploaded files
-  # 
+  #
   # def filename
   #   "something.jpg" if original_filename
   # end

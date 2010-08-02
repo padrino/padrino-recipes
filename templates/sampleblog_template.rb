@@ -1,8 +1,7 @@
 # Template for Sample Blog tutorial at http://www.padrinorb.com/guides/blog-tutorial
-
 project :test => :shoulda, :renderer => :haml, :stylesheet => :sass, :script => :jquery, :orm => :activerecord
 
-#default routes
+# Default routes
 APP_INIT = <<-APP
   get "/" do
     "Hello World!"
@@ -12,9 +11,9 @@ APP_INIT = <<-APP
     render :haml, "%p This is a sample blog created to demonstrate the power of Padrino!"
   end
 APP
-inject_into_file 'app/app.rb',APP_INIT, :after => "#\n  end\n"
+inject_into_file 'app/app.rb', APP_INIT, :after => "#\n  end\n"
 
-#generating padrino admin
+# Generating padrino admin
 generate :admin
 rake "ar:create ar:migrate seed"
 
@@ -23,7 +22,7 @@ generate :model, "post title:string body:text"
 inject_into_file 'db/migrate/002_create_posts.rb',"      t.timestamps\n",:after => "t.text :body\n"
 rake 'ar:migrate'
 
-# generating posts controller
+# Generating posts controller
 generate :controller, "posts get:index get:show"
 gsub_file('app/controllers/posts.rb', /^\s+\#\s+.*\n/,'')
 POST_INDEX_ROUTE = <<-POST
@@ -37,28 +36,29 @@ POST
 inject_into_file 'app/controllers/posts.rb', POST_INDEX_ROUTE, :after => "get :index do\n"
 inject_into_file 'app/controllers/posts.rb', POST_SHOW_ROUTE, :after => "get :show do\n"
 inject_into_file 'app/controllers/posts.rb', ", :with => :id", :after => "get :show" # doesn't run?
-# generate admin_page for post
+
+# Generate admin_page for post
 generate :admin_page, "post"
 
-# migrations to add account to post
+# Migrations to add account to post
 generate :migration, "AddAccountToPost account_id:integer"
 
-# update Post Model with Validations and Associations
+# Update Post Model with Validations and Associations
 POST_MODEL = <<-POST
   belongs_to :account
   validates_presence_of :title
   validates_presence_of :body
 POST
-inject_into_file 'app/models/post.rb',POST_MODEL, :after => "ActiveRecord::Base\n"
+inject_into_file 'app/models/post.rb', POST_MODEL, :after => "ActiveRecord::Base\n"
 rake 'ar:migrate'
 
-# update admin app controller for post
+# Update admin app controller for post
 inject_into_file 'admin/controllers/posts.rb',"    @post.account = current_account\n",:after => "new(params[:post])\n"
 
-# include RSS Feed
+# Include RSS Feed
 inject_into_file 'app/controllers/posts.rb', ", :respond_to => [:html, :rss, :atom]", :after => "get :index"
 
-# create index.haml
+# Create index.haml
 POST_INDEX = <<-POST
 - @title = "Welcome"
 
@@ -70,7 +70,7 @@ POST_INDEX = <<-POST
 POST
 create_file 'app/views/posts/index.haml', POST_INDEX
 
-# create _post.haml
+# Create _post.haml
 POST_PARTIAL = <<-POST
 .post
   .title= link_to post.title, url_for(:posts, :show, :id => post)
@@ -81,7 +81,7 @@ POST_PARTIAL = <<-POST
 POST
 create_file 'app/views/posts/_post.haml', POST_PARTIAL
 
-# create show.haml
+# Create show.haml
 POST_SHOW = <<-POST
 - @title = @post.title
 #show

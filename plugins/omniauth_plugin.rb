@@ -1,7 +1,9 @@
+##
 # Authentication Plugin via omniauth on Padrino
 # prereqs:
 # http://github.com/intridea/omniauth/
 # http://github.com/achiu/omniauth/ working fork
+#
 OMNIAUTH = <<-OMNIAUTH
     app.use OmniAuth::Builder do
       provider :twitter, 'consumer_key', 'consumer_secret'

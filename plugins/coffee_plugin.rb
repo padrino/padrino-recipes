@@ -1,3 +1,4 @@
+##
 # CoffeeScript Plugin via rack-coffee on Padrino
 # prereqs:
 # node.js:  using homebrew, $ brew install node.js
@@ -5,6 +6,7 @@
 # sudo gem install rack-coffee
 # http://github.com/mattly/rack-coffee
 # http://github.com/jashkenas/coffee-script
+#
 COFFEE = <<-COFFEE
     app.use Rack::Coffee,
         :root => Padrino.root('/public'),
@@ -18,4 +20,4 @@ COFFEE = <<-COFFEE
 COFFEE
 require_dependencies 'coffee-script'
 require_dependencies 'rack-coffee', :require => 'rack/coffee'
-initializer :coffee,COFFEE
+initializer :coffee, COFFEE

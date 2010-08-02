@@ -1,0 +1,15 @@
+/* Some basic tags */
+body{font-family:Georgia;color:#222222;}
+a{color:#222222;text-decoration:none;}
+a:hover{text-decoration:underline;color:#3D3D3D;}
+h1{font-size:26px;}
+h2{border-top:4px solid #CFCFCF;padding-top:15px;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+p{margin-top:10px;margin-bottom:10px;}
+
+/* Some basic classes */
+.left{float:left;}
+.right{float:right;}
+
+/* Debug */
+.container_16 {background: #fff url(/images/16_col.gif) repeat-y;}
