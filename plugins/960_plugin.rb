@@ -3,7 +3,7 @@
 end
 
 %w(12 16 24).each do |file|
-  get "http://github.com/nathansmith/960-Grid-System/tree/master/code/img/#{file}_col.gif", "public/images/#{file}_col.gif"
+  get "http://github.com/nathansmith/960-Grid-System/raw/master/code/img/#{file}_col.gif", "public/images/#{file}_col.gif"
 end
 
 say "Now add: reset.css, text.css, 960.css in your layout!", :green

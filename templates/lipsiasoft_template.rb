@@ -1,4 +1,5 @@
 # We generate a basic project
+$stdout.sync = true
 say
 project :test => :none, :renderer => :haml, :script => :jquery, :orm => :activerecord, :dev => yes?("Are you using padrino-dev?").present?, :tiny => yes?("Do you need a tiny structure?").present?, :bundle => true, :adapter => ask("SQL adapter for ActiveRecord (sqlite, mysql, postgres):")
 
@@ -18,7 +19,7 @@ exception_tpl = <<-RUBY
   set :exceptions_subject, "#{fetch_project_name}"
   set :exceptions_from,    "#{exception_from}"
   set :exceptions_to,      "#{exception_to}"
-  set :exceptions_page,    "#{'base/' if tiny?}errors"
+  set :exceptions_page,    "#{'base/' unless tiny?}errors"
 RUBY
 
 say
@@ -74,7 +75,7 @@ if yes?("Would you like to generate the basic frontend?")
   end
   RUBY
 
-  create_file "public/stylesheets/base.css", "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/base.css"
+  get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/base.css", "public/stylesheets/base.css"
 
   if tiny?
     get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/errors.haml", "app/views/errors.haml"
@@ -82,6 +83,7 @@ if yes?("Would you like to generate the basic frontend?")
     get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/index.haml", "app/views/index.haml"
     inject_into_file "app/helpers.rb", helpers_tpl, :after => "helpers do\n"
     inject_into_file "app/controllers.rb", route_tpl, :after => "controllers  do\n"
+    inject_into_file "app/app.rb", "  layout :layout\n", :after => "Padrino::Application\n"
   else
     get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/errors.haml", "app/views/base/errors.haml"
     get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/layout.haml", "app/views/layouts/application.haml"
