@@ -43,12 +43,12 @@ module ExceptionNotifier
     app.error 500 do
       boom  = env['sinatra.error']
       body  = ["\#{boom.class} - \#{boom.message}:", *boom.backtrace].join("\n  ")
-      body += "\n\n---Env:\n"
-      env.each { |k,v| body += "\n\#{k}: \#{v}" }
-      body += "\n\n---Params:\n"
-      params.each { |k,v| body += "\n\#{k.inspect} => \#{v.inspect}" }
+      body += "\\n\\n---Env:\\n"
+      env.each { |k,v| body += "\\n\#{k}: \#{v}" }
+      body += "\\n\\n---Params:\\n"
+      params.each { |k,v| body += "\\n\#{k.inspect} => \#{v.inspect}" }
       logger.error body
-      settings.redmine.each { |k,v| body += "\n\#{k.to_s.capitalize}: \#{v}" }
+      settings.redmine.each { |k,v| body += "\\n\#{k.to_s.capitalize}: \#{v}" }
       settings.email do
         subject "[\#{options.exceptions_subject}] \#{boom.class} - \#{boom.message}"
         to options.exceptions_to

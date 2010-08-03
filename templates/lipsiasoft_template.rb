@@ -1,11 +1,11 @@
 # We generate a basic project
 project :test => :none, :renderer => :haml, :script => :jquery, :orm => :activerecord, :tiny => yes?("Do you need a tiny structure?").present?
 
-say "Installing exception notifier", :green
+say "=> Installing exception notifier", :magenta
 execute_runner :plugin, :exception_notifier
-exception_subject = ask("Tell me the subject of the exception email, if you use redmine could be only #{fetch_project_name}")
-exception_from    = ask("Tell me the sender of the email i.e. exceptions@lipsiasoft.com")
-exception_to      = ask("Tell me the recipient email i.e. help@lipsiasoft.com")
+exception_subject = ask("Tell me the subject of the exception email, if you use redmine could be only '#{fetch_project_name}':")
+exception_from    = ask("Tell me the sender of the email i.e. exceptions@lipsiasoft.com:")
+exception_to      = ask("Tell me the recipient email i.e. help@lipsiasoft.com:")
 
 exception_tpl = <<-RUBY
 ##
@@ -19,9 +19,9 @@ set :exceptions_page,    "#{'base/' if tiny?}errors"
 RUBY
 
 if yes?("Do you want configure exception notifier for redmine?")
-  redmine_project  = ask("Tell me the redmine project i.e. lipsiabug")
-  redmine_tracker  = ask("Tell me the redmine tracker i.e. bug")
-  redmine_assigned = ask("Tell me what account we assign the issue i.e. d.dagostino")
+  redmine_project  = ask("Tell me the redmine project i.e. lipsiabug:")
+  redmine_tracker  = ask("Tell me the redmine tracker i.e. bug:")
+  redmine_assigned = ask("Tell me what account we assign the issue i.e. d.dagostino:")
   exception_tpl += "\nset :redmine, { :project => \"#{redmine_project}\", :tracker => \"#{redmine_tracker}\", :assigned => \"#{redmine_assigned}\" }"
 end
 
