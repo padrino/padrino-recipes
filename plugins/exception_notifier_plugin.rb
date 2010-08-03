@@ -48,8 +48,8 @@ module ExceptionNotifier
       body += "\n\n---Params:\n"
       params.each { |k,v| body += "\n#{k.inspect} => #{v.inspect}" }
       logger.error body
-      options.redmine.each { |k,v| body += "\n#{k.to_s.capitalize}: #{v}" }
-      app.email do
+      settings.redmine.each { |k,v| body += "\n#{k.to_s.capitalize}: #{v}" }
+      settings.email do
         subject "[#{options.exceptions_subject}] #{boom.class} - #{boom.message}"
         to options.exceptions_to
         from options.exceptions_from
