@@ -42,7 +42,7 @@ module ExceptionNotifier
     app.set :redmine, {}
     app.error 500 do
       boom  = env['sinatra.error']
-      body  = ["\#{boom.class} - \#{boom.message}:", *boom.backtrace].join("\n  ")
+      body  = ["\#{boom.class} - \#{boom.message}:", *boom.backtrace].join("\\n  ")
       body += "\\n\\n---Env:\\n"
       env.each { |k,v| body += "\\n\#{k}: \#{v}" }
       body += "\\n\\n---Params:\\n"
