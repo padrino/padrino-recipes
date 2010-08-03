@@ -49,12 +49,12 @@ module ExceptionNotifier
       params.each { |k,v| body += "\n#{k.inspect} => #{v.inspect}" }
       logger.error body
       options.redmine.each { |k,v| body += "\n#{k.to_s.capitalize}: #{v}" }
-      Padrino::Mailer::MailObject.new(
-        :subject => "[#{options.exceptions_subject}] #{boom.class} - #{boom.message}",
-        :to => options.exceptions_to,
-        :from => options.exceptions_from,
-        :body => body
-      ).deliver
+      app.email do
+        subject "[#{options.exceptions_subject}] #{boom.class} - #{boom.message}"
+        to options.exceptions_to
+        from options.exceptions_from
+        body body
+      end
       response.status = 500
       content_type 'text/html', :charset => "utf-8"
       render options.exceptions_page
