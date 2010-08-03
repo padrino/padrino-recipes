@@ -5,9 +5,7 @@
 # http://github.com/ddollar/rack-maintenance
 #
 MAINT = <<-MAINT
-    app.use Rack::Maintenance,
-       :file => Padrino.root('public/maintenance.html')
-       # :env  => 'MAINTENANCE'
+    app.use Rack::Maintenance, :file => Padrino.root('public/maintenance.html') #, :env  => 'MAINTENANCE'
 MAINT
 PAGE = <<-PAGE
 <html>

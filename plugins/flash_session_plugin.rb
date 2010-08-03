@@ -9,7 +9,7 @@
 #
 #  use FlashMiddleware, session_id
 #
-FLASH_SESSION <<-RUBY
+FLASH_SESSION = <<-RUBY
 require 'rack/utils'
 
 ##
@@ -39,4 +39,4 @@ class FlashSessionMiddleware
   end
 end
 RUBY
-create_file "lib/flash_session.rb"
+create_file "lib/flash_session.rb", FLASH_SESSION

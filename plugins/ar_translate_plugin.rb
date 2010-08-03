@@ -17,7 +17,7 @@
 #
 #  post.description_it => "I'm Italian"
 #
-AR_TRANSLATE <<-RUBY
+AR_TRANSLATE = <<-RUBY
 ##
 # This is an extension for ActiveRecord where if I had:
 #

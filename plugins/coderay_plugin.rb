@@ -6,9 +6,7 @@
 # http://github.com/webficient/rack-coderay
 #
 CODERAY = <<-CODERAY
-    app.use Rack::Coderay,
-        "//pre[@lang]",
-        :line_numbers => :table
+    app.use Rack::Coderay, "//pre[@lang]", :line_numbers => :table
 CODERAY
 require_dependencies 'coderay'
 require_dependencies 'rack-coderay', :require => 'rack/coderay'

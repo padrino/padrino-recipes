@@ -5,8 +5,7 @@
 # http://github.com/leehambley/rack-google-analytics
 #
 ANALYTICS = <<-ANALYTICS
-    app.use Rack::GoogleAnalytics,
-      :tracker => 'UA-xxxxxx-x'
+    app.use Rack::GoogleAnalytics, :tracker => 'UA-xxxxxx-x'
 ANALYTICS
 require_dependencies 'rack-google-analytics'
 initializer :analytics, ANALYTICS

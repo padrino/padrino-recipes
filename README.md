@@ -47,6 +47,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   exception_notifier - Send errors through mail or/and to redmine
 *   960                - 960.gs grid
 *   ar_permalink       - Generate permalink for a specified column on ActiveRecord
+*   ar_permalink_multi - Generate permalink for a specified multi language column(s) on ActiveRecord
 *   ar_translate       - Translate for you your ActiveRecord columns
 *   auto_locale        - Switch for you automatically the I18n.locale
 

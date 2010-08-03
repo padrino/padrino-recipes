@@ -3,7 +3,7 @@
 # prereqs:
 # include the generated partial into your layout!
 #
-ERB=<<-ERB
+ERB = <<-ERB
 <%= stylesheet_link_tag 'tripoli' %>
 <%= stylesheet_link_tag 'simple' %>
 ERB

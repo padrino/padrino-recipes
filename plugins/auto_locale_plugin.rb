@@ -11,7 +11,7 @@
 #
 # So when we call an url like: /ru/blog/posts this extension set for you :ru as I18n.locale
 #
-AUTO_LOCALE <<-RUBY
+AUTO_LOCALE = <<-RUBY
 ##
 # This extension give to padrino the ability to change
 # their locale inspecting.

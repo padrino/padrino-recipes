@@ -1,7 +1,7 @@
 ##
 # This module extend ActiveRecord.
 #
-# You need to to your model a column called +:permalink+
+# You need to add to your model a column called +:permalink+
 #
 # then use +has_permalink :title like:
 #
