@@ -1,5 +1,5 @@
 # We generate a basic project
-project :test => :none, :renderer => :haml, :script => :jquery, :orm => :activerecord, :tiny => yes?("Do you need a tiny structure?")
+project :test => :none, :renderer => :haml, :script => :jquery, :orm => :activerecord, :tiny => yes?("Do you need a tiny structure?").present?
 
 say "Installing exception notifier", :green
 execute_runner :plugin, :exception_notifier
