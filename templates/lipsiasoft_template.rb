@@ -1,9 +1,9 @@
 # We generate a basic project
+say
 dev     = yes?("Are you using padrino-dev?").present?
 tiny    = yes?("Do you need a tiny structure?").present?
 adapter = ask("SQL adapter for ActiveRecord (sqlite, mysql, postgres):")
 
-say
 project :test => :none, :renderer => :haml, :script => :jquery, :orm => :activerecord, :dev => dev, :tiny => tiny, :bundle => true, :adapter => adapter
 
 say "=> Installing exception notifier", :magenta
@@ -73,8 +73,8 @@ if yes?("Would you like to generate the basic frontend?")
   RUBY
 
   route_tpl = <<-RUBY
-  get "/" do
-    render :index
+  get :index, :map => "/" do
+    render "#{'base/' unless tiny?}index"
   end
   RUBY
 
@@ -101,3 +101,5 @@ say
 if yes?("Your database connection is correct (if yes we run migrations and seeds)?")
   rake "ar:create ar:migrate seed"
 end
+
+exit

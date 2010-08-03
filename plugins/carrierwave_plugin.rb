@@ -19,8 +19,8 @@ class Uploader < CarrierWave::Uploader::Base
   storage :file
   #
   # configure do |config|
-  #   config.s3_access_key_id = 'AKIAJBPCWSJNLHOPAKDQ'
-  #   config.s3_secret_access_key = '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'
+  #   config.s3_access_key_id = 'xxxx'
+  #   config.s3_secret_access_key = 'xxxx'
   #   config.s3_bucket = 'assets-web'
   # end
   #
@@ -89,6 +89,6 @@ end
 UPLOADER
 require_dependencies 'carrierwave','mini_magick'
 create_file destination_root('lib/uploader.rb'), UPLOADER
-generate :model, "upload"
+generate :model, "upload file:string created_at:datetime"
 prepend_file destination_root('app/models/upload.rb'), "require 'carrierwave/orm/#{fetch_component_choice(:orm)}'\n"
 inject_into_file destination_root('app/models/upload.rb'),"   mount_uploader :file, Uploader\n", :before => 'end'
