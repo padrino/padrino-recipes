@@ -55,6 +55,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 The templates folder contains full project generation templates. These files follow the convention of having *_template* appended to the name. (i.e __sampleblog_template.rb__) Included template are:
 
   *   sampleblog - [sample blog tutorial](http://www.padrinorb.com/guides/blog-tutorial)
+  *   lipsiasoft - template with haml/960/exception notifier and more used by [www.lipsiasoft.com](http://www.padrinorb.com/guides/blog-tutorial)
 
 
 ## Contribute
