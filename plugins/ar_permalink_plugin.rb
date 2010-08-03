@@ -9,7 +9,7 @@
 #     has_permalink :page
 #   end
 #
-AR_PERMALINK <<-RUBY
+AR_PERMALINK = <<-RUBY
 ##
 # This module extend ActiveRecord.
 #
