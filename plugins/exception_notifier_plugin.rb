@@ -44,7 +44,7 @@ module ExceptionNotifier
       boom  = env['sinatra.error']
       body  = ["\#{boom.class} - \#{boom.message}:", *boom.backtrace].join("\n  ")
       body += "\n\n---Env:\n"
-      env.each { |k,v| body += "\n#{k}: #{v}" }
+      env.each { |k,v| body += "\n\#{k}: \#{v}" }
       body += "\n\n---Params:\n"
       params.each { |k,v| body += "\n\#{k.inspect} => \#{v.inspect}" }
       logger.error body
