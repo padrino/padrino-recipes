@@ -2,7 +2,19 @@
 # This is an exception notifier for Padrino::Application with
 # redmine bonus feature.
 #
-
+# ==== Usage
+#
+#   class MyApp < Padrino::Application
+#     register ExceptionNotifier
+#     set :exceptions_from,    "errors@localhost.local"
+#     set :exceptions_to,      "foo@bar.local"
+#     set :exceptions_page,    :errors # => views/errors.haml/erb
+#     set :redmine, :project => "My Bugs", :tracker => "Bugs", :priority => "High"
+#     # Uncomment this for test in development
+#     #  disable :raise_errors
+#     #  disable :show_exceptions
+#   end
+#
 EXCEPTION = <<-RUBY
 ##
 # This is an exception notifier for Padrino::Application with
@@ -22,6 +34,7 @@ EXCEPTION = <<-RUBY
 #   end
 #
 module ExceptionNotifier
+
   def self.registered(app)
     app.set :exceptions_subject, "Exception"
     app.set :exceptions_to,      "errors@localhost.local"
