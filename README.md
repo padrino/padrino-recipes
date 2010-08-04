@@ -50,6 +50,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   ar_permalink_multi - Generate permalink for a specified multi language column(s) on ActiveRecord
 *   ar_translate       - Translate for you your ActiveRecord columns
 *   auto_locale        - Switch for you automatically the I18n.locale
+*   flash_session      -  Middleware that help you in passing your session in the URI, when it should be in the cookie.
 
 ### Templates
 
