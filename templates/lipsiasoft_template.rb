@@ -4,7 +4,7 @@ dev     = yes?("Are you using padrino-dev?").present?
 tiny    = yes?("Do you need a tiny structure?").present?
 adapter = ask("SQL adapter for ActiveRecord (sqlite, mysql, postgres):")
 
-project :test => :none, :renderer => :haml, :script => :jquery, :orm => :activerecord, :dev => dev, :tiny => tiny, :bundle => true, :adapter => adapter
+project :test => :none, :renderer => :haml, :script => :jquery, :orm => :activerecord, :dev => dev, :tiny => tiny, :adapter => adapter
 
 say "=> Installing exception notifier", :magenta
 execute_runner :plugin, :exception_notifier
@@ -38,12 +38,12 @@ run_bundler # We need to install padrino-contrib
 
 say
 if yes?("Do you need permalinks?")
-  execute_runner :ar_permlink
+  execute_runner :plugin, :ar_permalink
 end
 
 say
 if yes?("Do you need a textile support?")
-  execute_runner :textile
+  execute_runner :plugin, :ar_textile
   say "Need to check and install RedCloth", :yellow
   run_bundler # We use redcloth so we need to install it.
 end
