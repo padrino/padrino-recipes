@@ -10,16 +10,12 @@ say "=> Installing exception notifier", :magenta
 execute_runner :plugin, :exception_notifier
 
 say
-exception_subject = ask("Tell me the subject of the exception email", fetch_project_name)
+exception_subject = ask("Tell me the subject of the exception email", fetch_app_name)
 exception_from    = ask("Tell me the sender of the email", "exceptions@lipsiasoft.com")
 exception_to      = ask("Tell me the recipient email", "help@lipsiasoft.com")
 
 exception_tpl = <<-RUBY
-  ##
-  # Exception Notifier
-  #
-  register ExceptionNotifier
-  set :exceptions_subject, "#{fetch_project_name}"
+  set :exceptions_subject, "#{fetch_app_name}"
   set :exceptions_from,    "#{exception_from}"
   set :exceptions_to,      "#{exception_to}"
   set :exceptions_page,    "#{'base/' unless tiny?}errors"
@@ -35,7 +31,7 @@ end
 
 exception_tpl += "\n"
 
-inject_into_file "app/app.rb", exception_tpl, :after => "Padrino::Application\n"
+inject_into_file "app/app.rb", exception_tpl, :after => "Padrino::Contrib::ExceptionNotifier\n"
 
 say
 if yes?("Would you like to generate the padrino admin?")
