@@ -15,5 +15,8 @@
 #     #  disable :show_exceptions
 #   end
 #
+# prereqs:
+# sudo gem padrino-contrib
+#
 require_contrib('exception_notifier')
 initializer("Padrino::Contrib::ExceptionNotifier")

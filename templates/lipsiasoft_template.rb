@@ -33,15 +33,32 @@ exception_tpl += "\n"
 
 inject_into_file "app/app.rb", exception_tpl, :after => "Padrino::Contrib::ExceptionNotifier\n"
 
+say "Need to check and install padrino-contrib", :yellow
+run_bundler # We need to install padrino-contrib
+
 say
-if yes?("Would you like to generate the padrino admin?")
-  generate :admin
-  inject_into_file "admin/app.rb", exception_tpl, :after => "Padrino::Application\n"
+if yes?("Do you need permalinks?")
+  execute_runner :ar_permlink
+end
+
+say
+if yes?("Do you need a textile support?")
+  execute_runner :textile
+  say "Need to check and install RedCloth", :yellow
+  run_bundler # We use redcloth so we need to install it.
 end
 
 say
 if yes?("Do you want install carrierwave?")
   execute_runner :plugin, :carrierwave
+  say "Need to check and install CarrierWave", :yellow
+  run_bundler # We need to install carrierwave & c. without that we can bootstrap our app and generate other components
+end
+
+say
+if yes?("Would you like to generate the padrino admin?")
+  generate :admin
+  inject_into_file "admin/app.rb", exception_tpl, :after => "Padrino::Application\n"
 end
 
 say
