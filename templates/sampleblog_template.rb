@@ -56,7 +56,7 @@ rake 'ar:migrate'
 inject_into_file 'admin/controllers/posts.rb',"    @post.account = current_account\n",:after => "new(params[:post])\n"
 
 # Include RSS Feed
-inject_into_file 'app/controllers/posts.rb', ", :respond_to => [:html, :rss, :atom]", :after => "get :index"
+inject_into_file 'app/controllers/posts.rb', ", :provides => [:html, :rss, :atom]", :after => "get :index"
 
 # Create index.haml
 POST_INDEX = <<-POST
