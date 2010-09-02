@@ -7,5 +7,5 @@
 ANALYTICS = <<-ANALYTICS
     app.use Rack::GoogleAnalytics, :tracker => 'UA-xxxxxx-x'
 ANALYTICS
-require_dependencies 'rack-google-analytics'
+require_dependencies 'rack-google-analytics', :require => 'rack/google-analytics'
 initializer :analytics, ANALYTICS
