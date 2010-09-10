@@ -52,14 +52,14 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   auto_locale        - Switch for you automatically the I18n.locale
 *   flash_session      - Middleware that help you in passing your session in the URI, when it should be in the cookie.
 *   ar_textile         - Full support to textile with ActiveRecord
-
+*   watchr             - generates watchr test scripts
 ### Templates
 
 The templates folder contains full project generation templates. These files follow the convention of having *_template* appended to the name. (i.e __sampleblog_template.rb__) Included template are:
 
   *   sampleblog - [sample blog tutorial](http://www.padrinorb.com/guides/blog-tutorial)
   *   lipsiasoft - template with haml/960/exception notifier and more used by [LipsiaSOFT](http://www.lipsiasoft.com)
-
+  *   mongochist - templates that generate mongoid/mongomapper with machinist(also with haml/sass/rightjs/riot/rr)
 
 ## Contribute
 
