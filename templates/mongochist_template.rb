@@ -1,16 +1,9 @@
-# This template configures a project with the following:
-# Haml
-# Rightjs
-# Riot
-# Mongo ORM
-# RR
-
 # Determine whether mongoid or mongo_mapper is being used
 say
 tiny    = yes?("Do you want a tiny app structure?").present?
 orm = ask("Which mongo ORM do you want to use?:(mongoid/mongo_mapper)")
 
-project :test => :riot, :stylesheet => :sass, :renderer => :haml, :script => :rightjs, :orm => orm.gsub("_",""), :tiny => tiny, :mock => :rr
+project :test => options[:test], :stylesheet => options[:stylesheet], :renderer => options[:renderer], :script => options[:script], :orm => orm.gsub("_",""), :tiny => tiny, :mock => options[:mock]
 
 say "Configuring Machinist", :magenta
 machinist = <<-MONGO

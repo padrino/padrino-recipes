@@ -59,7 +59,7 @@ The templates folder contains full project generation templates. These files fol
 
   *   sampleblog - [sample blog tutorial](http://www.padrinorb.com/guides/blog-tutorial)
   *   lipsiasoft - template with haml/960/exception notifier and more used by [LipsiaSOFT](http://www.lipsiasoft.com)
-  *   mongochist - templates that generate mongoid/mongomapper with machinist(also with haml/sass/rightjs/riot/rr)
+  *   mongochist - templates that generate mongoid/mongomapper with machinist
 
 ## Contribute
 
