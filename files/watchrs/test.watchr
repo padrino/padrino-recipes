@@ -1,6 +1,6 @@
 # install watchr
 # $ sudo gem install watchr
-# 
+#
 # Run With:
 # $ watchr test.watchr
 #
@@ -9,7 +9,7 @@
 # Helpers
 # --------------------------------------------------
 
-def run(path)
+def run(cmd)
   puts(cmd)
   system("ruby #{cmd}")
 end
@@ -33,6 +33,6 @@ Signal.trap('QUIT') do
   puts " --- Running all tests ---\n\n"
   run_all_tests
 end
- 
+
 # Ctrl-C
 Signal.trap('INT') { abort("\n") }
