@@ -1,8 +1,8 @@
 # install watchr
 # $ sudo gem install watchr
-# 
+#
 # Run With:
-# $ watchr test.watchr
+# $ watchr spec.watchr
 #
 
 # --------------------------------------------------
@@ -17,22 +17,22 @@ end
 # --------------------------------------------------
 # Watchr Rules
 # --------------------------------------------------
-watch("^lib.*/(.*)\.rb")                { |m| run("test/#{m[1]}_test.rb") }
-watch("^app/controllers/(.*).rb")       { |m| run("test/controllers/#{m[1]}_controller_test.rb") }
-watch("^test/controllers/(.*)_test.rb") { |m| run("test/controllers/#{m[1]}_test.rb")}
-watch("^app/models/(.*).rb")            { |m| run("test/models/#{m[1]}_test.rb") }
-watch("^test/models/(.*)_test.rb")      { |m| run("test/models/#{m[1]}_test.rb") }
-watch("test.*/test_config\.rb")         { system( "padrino rake test" ) }
-watch("^test/(.*)_test\.rb")            { |m| run("test/#{m[1]}_test.rb") }
+watch("^lib.*/(.*)\.rb")                { |m| run("spec/#{m[1]}_spec.rb") }
+watch("^app/controllers/(.*).rb")       { |m| run("spec/controllers/#{m[1]}_controller_spec.rb") }
+watch("^spec/controllers/(.*)_spec.rb") { |m| run("spec/controllers/#{m[1]}_spec.rb")}
+watch("^app/models/(.*).rb")            { |m| run("spec/models/#{m[1]}_spec.rb") }
+watch("^spec/models/(.*)_spec.rb")      { |m| run("spec/models/#{m[1]}_spec.rb") }
+watch("spec.*/spec_helper\.rb")         { system( "padrino rake spec" ) }
+watch("^spec/(.*)_spec\.rb")            { |m| run("spec/#{m[1]}_spec.rb") }
 
 # --------------------------------------------------
 # Signal Handling
 # --------------------------------------------------
 # Ctrl-\
 Signal.trap('QUIT') do
-  puts " --- Running all tests ---\n\n"
-  run_all_tests
+  puts " --- Running all specs ---\n\n"
+  run_all_specs
 end
- 
+
 # Ctrl-C
 Signal.trap('INT') { abort("\n") }
