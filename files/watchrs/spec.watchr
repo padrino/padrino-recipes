@@ -9,7 +9,7 @@
 # Helpers
 # --------------------------------------------------
 
-def run(path)
+def run(cmd)
   puts(cmd)
   system("spec #{cmd}")
 end
