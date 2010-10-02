@@ -53,6 +53,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   flash_session      - Middleware that help you in passing your session in the URI, when it should be in the cookie.
 *   ar_textile         - Full support to textile with ActiveRecord
 *   watchr             - generates watchr test scripts
+*   heroku             - Prepare app for deployment to Heroku
 ### Templates
 
 The templates folder contains full project generation templates. These files follow the convention of having *_template* appended to the name. (i.e __sampleblog_template.rb__) Included template are:
