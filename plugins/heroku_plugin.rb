@@ -1,4 +1,3 @@
-##
 # Prepare app for deployment to Heroku by configuring production database,
 # adding required gem dependencies and adding a Rakefile with Padrino tasks.
 #
@@ -28,13 +27,18 @@ AR_CONFIG
 
 orm = fetch_component_choice(:orm)
 
+adapter = case orm
+  when 'activerecord' then 'pg'
+  when 'datamapper'   then 'dm-postgres-adapter'
+end
+
+append_file("Gemfile", "\n# Heroku\ngem '#{adapter}', :group => :production") if adapter
+
 case orm
-  when 'datamapper'
-    gsub_file "config/database.rb", /\"sqlite3.*production.+/, "ENV['DATABASE_URL'])"
-    append_file "Gemfile", "\n# Heroku\ngem 'dm-postgres-adapter', :group => :production"
+  when 'datamapper', 'sequel'
+    gsub_file "config/database.rb", /\"sqlite.*production.*/, "ENV['DATABASE_URL'])"
   when 'activerecord'
     gsub_file "config/database.rb", /^.+production.*\{(\n\s+\:.*){2}\n\s\}/, AR_CONFIG
-    append_file "Gemfile", "\n# Heroku\ngem 'pg', :group => :production"
   else
     say "Remember to configure your production database, if necessary.", :yellow
 end
