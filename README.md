@@ -54,6 +54,8 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   ar_textile         - Full support to textile with ActiveRecord
 *   watchr             - generates watchr test scripts
 *   heroku             - Prepare app for deployment to Heroku
+*   secure_only        - Run app on https via rack-secure\_only
+
 ### Templates
 
 The templates folder contains full project generation templates. These files follow the convention of having *_template* appended to the name. (i.e __sampleblog_template.rb__) Included template are:
