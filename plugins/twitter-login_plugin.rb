@@ -13,6 +13,6 @@ TWITTER = <<-TWITTER
       # :return_to => '/'
     app.helpers Twitter::Login::Helpers
 TWITTER
-require_dependencies 'twitter-login', :require => 'twitter/login'
+require_dependencies 'twitter-login', :require => 'twitter/login', :version => "= 0.3"
 initializer :twitter_login, TWITTER
 inject_into_file destination_root('app/app.rb'),"    enable :sessions\n", :after => "configure do\n"
