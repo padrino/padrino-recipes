@@ -15,7 +15,7 @@ exception_from    = ask("Tell me the sender of the email", "exceptions@lipsiasof
 exception_to      = ask("Tell me the recipient email", "help@lipsiasoft.com")
 
 exception_tpl = <<-RUBY
-  set :exceptions_subject, "#{fetch_app_name}"
+  set :exceptions_subject, "#{exception_subject}"
   set :exceptions_from,    "#{exception_from}"
   set :exceptions_to,      "#{exception_to}"
   set :exceptions_page,    "#{'base/' unless tiny?}errors"
