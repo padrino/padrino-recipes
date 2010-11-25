@@ -91,20 +91,20 @@ if yes?("Would you like to generate the basic frontend?")
   end
   RUBY
 
-  get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/base.css", "public/stylesheets/base.css"
+  get "https://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/base.css", "public/stylesheets/base.css"
 
   if tiny?
-    get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/errors.haml", "app/views/errors.haml"
-    get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/layout.haml", "app/views/layout.haml"
-    get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/index.haml", "app/views/index.haml"
+    get "https://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/errors.haml", "app/views/errors.haml"
+    get "https://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/layout.haml", "app/views/layout.haml"
+    get "https://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/index.haml", "app/views/index.haml"
     inject_into_file "app/helpers.rb", helpers_tpl, :after => "helpers do\n"
     inject_into_file "app/controllers.rb", route_tpl, :after => "controllers  do\n"
     inject_into_file "app/app.rb", "  layout :layout\n", :after => "Padrino::Application\n"
   else
-    get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/errors.haml", "app/views/base/errors.haml"
-    get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/layout.haml", "app/views/layouts/application.haml"
+    get "https://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/errors.haml", "app/views/base/errors.haml"
+    get "https://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/layout.haml", "app/views/layouts/application.haml"
     generate :controller, "base"
-    get "http://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/index.haml", "app/views/base/index.haml"
+    get "https://github.com/padrino/padrino-recipes/raw/master/files/lipsiasoft/index.haml", "app/views/base/index.haml"
     inject_into_file "app/controllers/base.rb", route_tpl, :after => "controllers :base do\n"
     create_file "app/helpers/base.rb", "#{fetch_app_name("/app")}.helpers do\n#{helpers_tpl}\nend"
   end
