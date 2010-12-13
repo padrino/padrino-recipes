@@ -4,7 +4,7 @@ dev     = yes?("Are you using padrino-dev?").present?
 tiny    = yes?("Do you need a tiny structure?").present?
 adapter = ask("SQL adapter for ActiveRecord (sqlite, mysql, postgres, none):")
 
-project :test => :none, :renderer => :haml, :script => :jquery, :orm => adapter, :dev => dev, :tiny => tiny, :adapter => adapter
+project :test => :none, :renderer => :haml, :script => :jquery, :orm => 'activerecord', :dev => dev, :tiny => tiny, :adapter => adapter
 
 say "=> Installing exception notifier", :magenta
 execute_runner :plugin, :exception_notifier
