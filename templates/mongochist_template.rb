@@ -1,8 +1,8 @@
 # Determine whether mongoid or mongo_mapper is being used
 say
 orm = ask("Which mongo ORM do you want to use?:(mongoid/mongo_mapper)")
-
-project :test => options[:test], :stylesheet => options[:stylesheet], :renderer => options[:renderer], :script => options[:script], :orm => orm.gsub("_",""), :tiny => options[:tiny], :mock => options[:mock]
+tiny = yes?("Need tiny structure?")
+project :test => options[:test], :stylesheet => options[:stylesheet], :renderer => options[:renderer], :script => options[:script], :orm => orm.gsub("_",""), :tiny => tiny, :mock => options[:mock]
 
 say "Configuring Machinist", :magenta
 machinist = <<-MONGO
