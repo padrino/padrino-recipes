@@ -1,5 +1,5 @@
 # install watchr
-# $ sudo gem install watchr
+# $ gem install watchr
 #
 # Run With:
 # $ watchr test.watchr
@@ -19,7 +19,7 @@ end
 # --------------------------------------------------
 watch("^lib.*/(.*)\.rb")                { |m| run("test/#{m[1]}_test.rb") }
 watch("^app/controllers/(.*).rb")       { |m| run("test/controllers/#{m[1]}_controller_test.rb") }
-watch("^test/controllers/(.*)_test.rb") { |m| run("test/controllers/#{m[1]}_test.rb")}
+watch("^test/controllers/(.*)_test.rb") { |m| run("test/controllers/#{m[1]}_test.rb") }
 watch("^app/models/(.*).rb")            { |m| run("test/models/#{m[1]}_test.rb") }
 watch("^test/models/(.*)_test.rb")      { |m| run("test/models/#{m[1]}_test.rb") }
 watch("test.*/test_config\.rb")         { system( "padrino rake test" ) }
@@ -31,7 +31,7 @@ watch("^test/(.*)_test\.rb")            { |m| run("test/#{m[1]}_test.rb") }
 # Ctrl-\
 Signal.trap('QUIT') do
   puts " --- Running all tests ---\n\n"
-  run_all_tests
+  system "padrino rake test"
 end
 
 # Ctrl-C
