@@ -30,7 +30,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   maintenance        - Maintenance page plugin via rack-maintenance
 *   openid             - OpenID authentication via rack-openid
 *   carrierwave        - Carrierwave plugin via carrierwave
-*   twitter-login      - Twitter Login Authentication via twitter-logi
+*   twitter-login      - Twitter Login Authentication via twitter-login
 *   payment            - Payment Plugin via rack-payment
 *   blueprint          - Blueprint CSS
 *   tripoli            - Tripoli CSS
@@ -53,9 +53,9 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   flash_session      - Middleware that help you in passing your session in the URI, when it should be in the cookie.
 *   ar_textile         - Full support to textile with ActiveRecord
 *   watchr             - generates watchr test scripts
-*   heroku             - Prepare app for deployment to Heroku
-*   secure_only        - Run app on https via rack-secure\_only
-*   jammit             - Add Asset Packaging via jammit-sinatra
+*   heroku             - Prepare app for deployment to Heroku ( Thanks to commuter )
+*   secure_only        - Run app on https via rack-secure\_only ( Thanks to splir )
+*   jammit             - Add Asset Packaging via jammit-sinatra ( Thanks to railsjedi )
 
 ### Templates
 
