@@ -55,6 +55,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   watchr             - generates watchr test scripts
 *   heroku             - Prepare app for deployment to Heroku
 *   secure_only        - Run app on https via rack-secure\_only
+*   jammit             - Add Asset Packaging via jammit-sinatra
 
 ### Templates
 
