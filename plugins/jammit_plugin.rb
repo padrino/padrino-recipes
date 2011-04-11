@@ -22,7 +22,7 @@ JAMMITR
 
 JAMMIT_HOOK = (<<-JAMMITH).gsub(/^ {2}/, '') unless defined?(JAMMIT_HOOK)
   Padrino.after_load do
-    ::RAILS_ENV = PADRINO_ENV # jammit 0.6.0 workaround
+    ::RAILS_ENV = PADRINO_ENV unless defined?(::RAILS_ENV) # jammit 0.6.0 workaround
     Jammit.load_configuration("\#{Padrino.root}/config/assets.yml")
   end
 
