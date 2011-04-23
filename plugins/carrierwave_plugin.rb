@@ -11,20 +11,22 @@ class Uploader < CarrierWave::Uploader::Base
   #
   # include CarrierWave::RMagick
   # include CarrierWave::ImageScience
-  include CarrierWave::MiniMagick
+  # include CarrierWave::MiniMagick
 
   ##
   # Storage type
   #
   storage :file
-  #
   # configure do |config|
-  #   config.s3_access_key_id = 'xxxx'
-  #   config.s3_secret_access_key = 'xxxx'
-  #   config.s3_bucket = 'assets-web'
+  #   config.fog_credentials = {
+  #     :provider              => 'XXX',
+  #     :aws_access_key_id     => 'YOUR_ACCESS_KEY',
+  #     :aws_secret_access_key => 'YOUR_SECRET_KEY'
+  #   }
+  #   config.fog_directory = 'YOUR_BUCKET'
   # end
-  #
-  # storage :right_s3
+  # storage :fog
+
 
 
   ## Manually set root
@@ -54,14 +56,7 @@ class Uploader < CarrierWave::Uploader::Base
   ##
   # Process files as they are uploaded.
   #
-  process :resize_to_fit => [740, 580]
-  version :thumb do
-    process :resize_to_fill => [100, 100]
-  end
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
+  # process :resize_to_fit => [740, 580]
 
   ##
   # Create different versions of your uploaded files
@@ -87,8 +82,8 @@ class Uploader < CarrierWave::Uploader::Base
   # end
 end
 UPLOADER
-require_dependencies 'carrierwave','mini_magick'
 create_file destination_root('lib/uploader.rb'), UPLOADER
 generate :model, "upload file:text created_at:datetime"
 prepend_file destination_root('app/models/upload.rb'), "require 'carrierwave/orm/#{fetch_component_choice(:orm)}'\n"
 inject_into_file destination_root('app/models/upload.rb'),"   mount_uploader :file, Uploader\n", :before => 'end'
+require_dependencies 'carrierwave'
