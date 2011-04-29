@@ -17,13 +17,16 @@ end
 # --------------------------------------------------
 # Watchr Rules
 # --------------------------------------------------
-watch("^lib.*/(.*)\.rb")                { |m| run("spec/#{m[1]}_spec.rb") }
-watch("^app/controllers/(.*).rb")       { |m| run("spec/controllers/#{m[1]}_controller_spec.rb") }
-watch("^spec/controllers/(.*)_spec.rb") { |m| run("spec/controllers/#{m[1]}_spec.rb") }
-watch("^app/models/(.*).rb")            { |m| run("spec/models/#{m[1]}_spec.rb") }
-watch("^spec/models/(.*)_spec.rb")      { |m| run("spec/models/#{m[1]}_spec.rb") }
-watch("spec.*/spec_helper\.rb")         { system( "padrino rake spec" ) }
-watch("^spec/(.*)_spec\.rb")            { |m| run("spec/#{m[1]}_spec.rb") }
+watch("^lib.*/(.*)\.rb")                      { |m| run("spec/#{m[1]}_spec.rb") }
+
+watch("^(.*)/controllers/(.*).rb")            { |m| run("spec/#{m[1]}/controllers/#{m[2]}_controller_spec.rb") }
+watch("^spec/(.*)/controllers/(.*)_spec.rb")  { |m| run("spec/#{m[1]}/controllers/#{m[2]}_spec.rb") }
+
+watch("^(.*)/models/(.*).rb")                 { |m| run("spec/#{m[1]}/models/#{m[2]}_spec.rb") }
+watch("^spec/(.*)/models/(.*)_spec.rb")       { |m| run("spec/#{m[1]}/models/#{m[2]}_spec.rb") }
+
+watch("spec.*/spec_helper\.rb")               { system( "padrino rake spec" )   }
+watch("^spec/(.*)_spec\.rb")                  { |m| run("spec/#{m[1]}_spec.rb") }
 
 # --------------------------------------------------
 # Signal Handling
