@@ -11,7 +11,7 @@
 
 def run(cmd)
   puts(cmd)
-  system("spec #{cmd}")
+  system("rspec #{cmd}")
 end
 
 # --------------------------------------------------
