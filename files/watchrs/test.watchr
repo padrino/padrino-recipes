@@ -17,7 +17,7 @@ end
 # --------------------------------------------------
 # Watchr Rules
 # --------------------------------------------------
-watch("^lib.*/(.*)\.rb")                     { |m| run("test/#{m[1]}_test.rb") }
+watch("^lib/(.*)\.rb")                     { |m| run("test/#{m[1]}_test.rb") }
 
 watch("^(.*)/controllers/(.*).rb")           { |m| run("test/#{m[1]}/controllers/#{m[2]}_controller_test.rb") }
 watch("^test/(.*)/controllers/(.*)_test.rb") { |m| run("test/#{m[1]}/controllers/#{m[2]}_test.rb") }
