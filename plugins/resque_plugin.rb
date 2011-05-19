@@ -29,6 +29,6 @@ end
 RAKE
 
 create_file destination_root('lib/resque_init.rb'), INIT
-create_file destiniation_root('config/resque.yml'), CONFIG
-create_file destiniation_root('lib/tasks/resque.rake'), RAKE
+create_file destination_root('config/resque.yml'), CONFIG
+create_file destination_root('lib/tasks/resque.rake'), RAKE
 require_dependencies 'resque'
