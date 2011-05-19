@@ -2,9 +2,12 @@
 say
 orm = ask("Which mongo ORM do you want to use?:(mongoid/mongo_mapper)")
 tiny = yes?("Need tiny structure?")
-project :test => options[:test], :stylesheet => options[:stylesheet], :renderer => options[:renderer],
+options= { :test => options[:test], :stylesheet => options[:stylesheet], :renderer => options[:renderer],
         :script => options[:script], :orm => orm.gsub("_",""), :tiny => tiny, :mock => options[:mock],
-        :app => options[:app]
+        :app => options[:app] }
+
+options.reject! { |k,v| v.nil? }
+project options
 
 say "Configuring Machinist", :magenta
 machinist = <<-MONGO
