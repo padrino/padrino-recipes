@@ -2,12 +2,12 @@
 say
 orm = ask("Which mongo ORM do you want to use?:(mongoid/mongo_mapper)")
 tiny = yes?("Need tiny structure?")
-options= { :test => options[:test], :stylesheet => options[:stylesheet], :renderer => options[:renderer],
+choices = { :test => options[:test], :stylesheet => options[:stylesheet], :renderer => options[:renderer],
         :script => options[:script], :orm => orm.gsub("_",""), :tiny => tiny, :mock => options[:mock],
         :app => options[:app] }
 
-options.reject! { |k,v| v.nil? }
-project options
+choices.reject! { |k,v| v.nil? }
+project choices
 
 say "Configuring Machinist", :magenta
 machinist = <<-MONGO
@@ -23,3 +23,5 @@ SHAM
 inject_into_file destination_root("Gemfile"),machinist, :after => "# Test requirements\n"
 create_file destination_root("test/blueprints.rb"), blueprints
 inject_into_file destination_root("test/test_config.rb"), "require File.join(File.dirname(__FILE__),'blueprints')\n", :after => "/boot\")\n"
+
+
