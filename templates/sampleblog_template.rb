@@ -49,7 +49,7 @@ POST_MODEL = <<-POST
   validates_presence_of :title
   validates_presence_of :body
 POST
-inject_into_file 'app/models/post.rb', POST_MODEL, :after => "ActiveRecord::Base\n"
+inject_into_file 'models/post.rb', POST_MODEL, :after => "ActiveRecord::Base\n"
 rake 'ar:migrate'
 
 # Update admin app controller for post
