@@ -40,7 +40,7 @@ DISQUS = <<-DISQUS
       :developer       => Padrino.env == :development, # allows threads to work on localhost
       :container_id    => 'disqus_thread',             # desired thread container
       :avatar_size     => 48,                          # squared pixel size of avatars
-      :color           => "grey",                      # theme color
+      :color           => "grey",                      # theme color: ["blue", "grey", "green", "red", "orange"]
       :default_tab     => "popular",                   # default widget tab
       :hide_avatars    => false,                       # hide or show avatars
       :hide_mods       => true,                        # hide or show moderation
