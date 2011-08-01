@@ -57,6 +57,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   secure_only        - Run app on https via rack-secure\_only ( Thanks to splir )
 *   jammit             - Add Asset Packaging via jammit-sinatra ( Thanks to railsjedi )
 *   resque             - Add support for the resque redis based background worker
+*   barista            - Add support for Coffeescript via Barista
 
 ### Templates
 
