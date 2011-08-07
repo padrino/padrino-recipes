@@ -46,9 +46,9 @@ end
 COFFEE
 
 APP_INIT = <<-INIT
-    configure :development do
-      register Barista Initializer
-    end
+  configure :development do
+    register BaristaInitializer
+  end
 INIT
 
 create_file destination_root('lib/barista_init.rb'), COFFEE
