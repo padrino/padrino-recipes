@@ -25,7 +25,13 @@ ActiveRecord::Base.configurations[:production] = {
 }
 AR_CONFIG
 
+CMPASS = <<-CMPS
+    Sass::Plugin.options[:never_update] = true if Padrino.env == :production
+
+CMPS
+
 orm = fetch_component_choice(:orm)
+css = fetch_component_choice(:stylesheet)
 
 adapter = case orm
   when 'activerecord' then 'pg'
@@ -41,4 +47,12 @@ case orm
     gsub_file "config/database.rb", /^.+production.*\{(\n\s+\:.*){2}\n\s\}/, AR_CONFIG
   else
     say "Remember to configure your production database, if necessary.", :yellow
+end
+
+if css == 'compass'
+  inject_into_file destination_root('lib/compass_plugin.rb'), CMPASS, :before => "    Compass.configure_sass_plugin!"
+end
+
+if (val = css.match(/scss|sass/))
+  inject_into_file destination_root("lib/#{val[0]}_init.rb"), CMPASS.gsub(/^    /,''), :before => "app.use Sass::Plugin::Rack"
 end
