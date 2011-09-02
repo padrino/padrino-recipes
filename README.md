@@ -59,6 +59,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   resque             - Add support for the resque redis based background worker
 *   barista            - Add support for Coffeescript via Barista
 *   protection         - Add support rack-protection to your app to protect against certain security exploitations
+*   will\_paginate     - Add support for will\_paginate
 
 ### Templates
 
