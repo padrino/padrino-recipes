@@ -20,4 +20,4 @@
 # prereqs:
 # sudo gem install padrino-contrib
 #
-require_contrib('orm/ar/translate')
+require_contrib('orm/active_record/translate')
