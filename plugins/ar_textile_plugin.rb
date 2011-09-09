@@ -14,5 +14,5 @@
 # sudo gem install padrino-contrib
 # sudo gem install RedCloth
 #
-require_contrib('orm/ar/textile')
+require_contrib('orm/active_record/textile')
 require_dependency('RedCloth')

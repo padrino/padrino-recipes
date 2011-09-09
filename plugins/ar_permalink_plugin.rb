@@ -12,4 +12,4 @@
 # prereqs:
 # sudo gem install padrino-contrib
 #
-require_contrib('orm/ar/permalink')
+require_contrib('orm/active_record/permalink')
