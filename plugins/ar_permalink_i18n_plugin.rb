@@ -12,4 +12,4 @@
 # prereqs:
 # sudo gem install padrino-contrib
 #
-require_contrib('orm/ar/permalink_i18n')
+require_contrib('orm/active_record/permalink_i18n')
