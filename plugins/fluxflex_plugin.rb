@@ -38,9 +38,7 @@
 # Padrino libraries and to run Padrino.application in place of 'config.ru'
 #
 # === public_html/.htaccess file
-# 
-# This sets up ruby environment, which is fluxflex.com specific
-# You have a choice of ruby1.8.7 or ruby1.9.2
+# redirects all requests to dispatch.fcgi (apache specific)
 #
 # === flx_deploy.sh file
 # installs rubygems (on each 'git push')
