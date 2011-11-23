@@ -1,6 +1,8 @@
 ##
 # Plugin to prepare Padrino app for deployent on on www.fluxflex.org
-#  prereqs: fcgi ("$ gem install fcgi" or "gem 'fcgi'" in your Gemfile)
+#  prereqs:
+#  - fcgi ("$ gem install fcgi" or "gem 'fcgi'" in your Gemfile)
+#  - git (to deploy via 'git push')
 # 
 # == INTRO
 #
