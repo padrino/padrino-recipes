@@ -209,3 +209,11 @@ unless File.read('Gemfile').include?('fcgi')
 end
 
 require_dependencies 'fcgi'
+
+shell.say ""
+shell.say "Don't forget to adjust your db connection string"
+shell.say "to look like this (adjust for your adapter):"
+shell.say "mysql2://FLX_DB_USER:FLX_DB_PASS@FLX_DB_HOST/FLX_DB_NAME"
+shell.say ""
+
+
