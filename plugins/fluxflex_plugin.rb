@@ -165,6 +165,14 @@ FLUXFLEX_SETUP = <<FLXS
 # bundle install --without development test
 # PADRINO_ENV=production bundle exec padrino rake sq:migrate:auto 
 #
+# You also need to use the following db connections string in your
+# database.rb (sequel example, adjust for your adapter):
+# /.../
+# when :production\
+# then Sequel.connect(\
+# "mysql2://FLX_DB_USER:FLX_DB_PASS@FLX_DB_HOST/FLX_DB_NAME",
+#   :loggers => [logger] ) /.../ etc.
+
 
 FLXS
 
