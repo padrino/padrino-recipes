@@ -30,6 +30,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   hoptoad            - HopToad notification via rack_hoptoad
 *   maintenance        - Maintenance page plugin via rack-maintenance
 *   openid             - OpenID authentication via rack-openid
+*   fluxflex           - Deploy your app on FluxFlex.com PaaS
 *   carrierwave        - Carrierwave plugin via carrierwave
 *   twitter-login      - Twitter Login Authentication via twitter-login
 *   payment            - Payment Plugin via rack-payment
