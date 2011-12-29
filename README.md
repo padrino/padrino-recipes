@@ -63,6 +63,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   protection         - Add support rack-protection to your app to protect against certain security exploitations
 *   will\_paginate     - Add support for will\_paginate
 *   bootstrap          - Add Twitter bootstrap
+*   vcr                - Add VCR to your test suite.
 
 ### Templates
 
