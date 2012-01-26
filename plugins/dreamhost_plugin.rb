@@ -56,10 +56,10 @@ require_dependencies 'fcgi'
 
 shell.say ""
 shell.say "Don't forget to adjust your USER_NAME with your dreamhost account into public/dispatch.fcgi"
-shell.say "Don't forget to change file permission':"
-shell.say "into your padrino root: "
+shell.say "Don't forget to change file permission:"
+shell.say "into your padrino root:"
 shell.say "chmod 755 public"
-shall.say "chmod 755 public/dispatch.fcgi"
+shell.say "chmod 755 public/dispatch.fcgi"
 shell.say ""
 shell.say "IMPORTANT:"
 shell.say "goto to DH panel control and uncheck"
