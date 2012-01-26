@@ -64,6 +64,7 @@ The plugin folders contains templates that can be ran to *plugin* certain librar
 *   will\_paginate     - Add support for will\_paginate
 *   bootstrap          - Add Twitter bootstrap
 *   vcr                - Add VCR to your test suite.
+*   dreamhost          - Deploy your app on DreamHost.com
 
 ### Templates
 
