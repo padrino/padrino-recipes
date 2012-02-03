@@ -1,33 +1,33 @@
 ##
-# Plugin to prepare Padrino app for deployent on www.dreamhost.com
-# DH use old ruby and very old rack version!
+# A Plugin to prepare a Padrino app for deployment to www.dreamhost.com
+# Dreamhost uses an earlier Ruby version (1.8.7) and very old rack version (1.3.6)!
 #
 # IMPORTANT !!!
-# To bypass this problem, you DON'T use passanger in your host
-# goto to DH panel control and uncheck
-# Passenger (Ruby/Python apps only)
+# To bypass this problem, you SHOULD NOT use Passenger as your rack server.
+# Disable it by going to the Dreamhost control panel and unchecking
+# 'Passenger (Ruby/Python apps only)'
 #
 # TIPS :
 #
-# If you want to use ActiveRecord >= 3.2 (Padrino >= 0.10.6), you have to install a
-# new version of rubygems on Dreamhost, since the one installed is too
-# old (1.3.6) and therefore not compatible:
-# read the wiki dhreamhost  or follow the following steps:
-# $ cd ~ /
+# If you wish to use ActiveRecord >= 3.2 (Padrino >= 0.10.6) you first have to 
+# install a new version of rubygems on your Dreamhost server because the existing one 
+# already installed is so  old (1.3.6) it is incompatible:
+# read the wiki Dreamhost or follow these steps:
+# $ cd ~/
 # $ mkdir. Gem bin lib src
 # $ cd src
-# $ wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.15.tgz  (latest version at this time)
+# $ wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.15.tgz  (the latest version at the present time)
 # $ tar xvf rubygems-1.8.15.tgz
 # $ cd rubygems-1.8.15
-# $ ruby setup.rb - prefix = $ HOME
-# $ cd ~ / bin
+# $ ruby setup.rb - prefix = $HOME
+# $ cd ~/bin
 # $ ln-s gem1.8 gem
-# Add the following lines. Bash_profile
-# $ export PATH = "$ HOME / bin: $ HOME / .gems / bin: $ PATH"
-# $ export RUBYLIB = "$ HOME / lib: $ RUBYLIB"
+# Add the following lines in the  ~/.bash_profile
+# $ export PATH = "$HOME/bin:$HOME/.gems/bin:$PATH"
+# $ export RUBYLIB = "$HOME/lib:$RUBYLIB"
 # then
-# $ source ~ /. Bash_profile
-# $ which gem # Should return / home / USERNAME / bin / gem
+# $ source ~/.Bash_profile
+# $ which gem # Should return /home/USERNAME/bin/gem
 # $ gem-v # Should return 1.8.15
 # DH wiki: http://wiki.dreamhost.com/RubyGems
 
@@ -63,7 +63,7 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ dispatch.fcgi/$1 [QSA,L]
 
-ErrorDocument 500 "Padrino  application failed to start properly"
+ErrorDocument 500 "Padrino application failed to start properly"
 
 DHTX
 
@@ -77,18 +77,18 @@ end
 require_dependencies 'fcgi'
 
 shell.say ""
-shell.say "Don't forget to adjust your USER_NAME with your dreamhost account into public/dispatch.fcgi"
-shell.say "Don't forget to change file permission:"
-shell.say "into your padrino root:"
+shell.say "Don't forget to swap USER_NAME for you Dreamhost account name in public/dispatch.fcgi"
+shell.say "Don't forget to change these file permissions:"
 shell.say "$ chmod 755 public"
 shell.say "$ chmod 755 public/dispatch.fcgi"
 shell.say ""
 shell.say "IMPORTANT:"
-shell.say "goto to DH panel control and uncheck"
+shell.say "Go to the Dreamhost control panel and uncheck"
 shell.say "Passenger (Ruby/Python apps only)"
 shell.say ""
+shell.say "Run bundler"
 shell.say "$ bundle install"
 shell.say ""
-shell.say "Check if it's work:"
+shell.say "Finally check to see if your site is working:"
 shell.say "$ ruby public/dispatch.fcgi"
 shell.say ""
