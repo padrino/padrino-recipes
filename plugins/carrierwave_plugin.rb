@@ -84,10 +84,21 @@ end
 UPLOADER
 create_file destination_root('lib/uploader.rb'), UPLOADER
 generate :model, "upload file:text created_at:datetime"
-prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/#{fetch_component_choice(:orm)}'\n"
+
 case fetch_component_choice(:orm)
+when 'mini_record'
+  prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/active_record'\n"
 when 'datamapper'
+  prepend_file destination_root('models/upload.rb'), "require 'carrierwave/datamapper'\n"
   inject_into_file destination_root('models/upload.rb'),", :auto_validation => false\n", :after => "property :file, Text"
+  require_dependencies 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
+when 'mongoid'
+  require_dependencies 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+when 'sequel'
+  require_dependencies 'carrierwave-sequel', :require => 'carrierwave/sequel'
+else
+  prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/#{fetch_component_choice(:orm)}'\n"
 end
-inject_into_file destination_root('models/upload.rb'),"   mount_uploader :file, Uploader\n", :before => 'end'
+
 require_dependencies 'carrierwave'
+inject_into_file destination_root('models/upload.rb'),"   mount_uploader :file, Uploader\n", :before => 'end'
