@@ -1,3 +1,6 @@
+##
+# Contains all old admin related helpers
+#
 OLD_HELPER = <<-OLD_HELPER
 module Padrino
   module Admin
