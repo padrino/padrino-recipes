@@ -30,7 +30,7 @@ module Padrino
         #   t_admin(:profile, "My Profile")
         #
         def padrino_admin_translate(word, default=nil)
-          t("padrino.admin.#{word}", :default => (default || word.to_s.humanize))
+          t("padrino.admin.\#{word}", :default => (default || word.to_s.humanize))
         end
         alias :t_admin :padrino_admin_translate
         alias :pat :t_admin
@@ -50,7 +50,7 @@ module Padrino
         #   mat(:account, :email)
         #
         def model_attribute_translate(model, attribute)
-          t("models.#{model}.attributes.#{attribute}", :default => attribute.to_s.humanize)
+          t("models.\#{model}.attributes.\#{attribute}", :default => attribute.to_s.humanize)
         end
         alias :t_attr :model_attribute_translate
         alias :mat :t_attr
@@ -68,7 +68,7 @@ module Padrino
         #   t_model(:account)
         #
         def model_translate(model)
-          t("models.#{model}.name", :default => model.to_s.humanize)
+          t("models.\#{model}.name", :default => model.to_s.humanize)
         end
         alias :t_model :model_translate
         alias :mt :t_model
