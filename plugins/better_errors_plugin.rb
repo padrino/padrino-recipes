@@ -1,5 +1,5 @@
 ##
-# Template to get better_errors on Padrino
+# Better Errors plugin on Padrino
 #
 # https://github.com/charliesome/better_errors
 #
