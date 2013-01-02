@@ -66,7 +66,7 @@ file follow the convention of having *_plugin* appended to the name.(i.e **coder
 - bootstrap          - Add Twitter bootstrap
 - vcr                - Add VCR to your test suite.
 - dreamhost          - Deploy your app on DreamHost.com
-
+- old_admin          - Add 100% compat with current 0.10.x admin
 
 ### Templates
 
