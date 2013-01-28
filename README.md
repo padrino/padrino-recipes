@@ -29,13 +29,14 @@ To run plugin,
 
 
 - 960                - 960.gs grid
-- access             - Access Restriction via rack-contrib.
-- ar_permalink       - Generate permalink for a specified column on ActiveRecord.
-- ar_permalink_multi - Generate permalink for a specified multi language column(s) on ActiveRecord.
-- ar_textile         - Full support to textile with ActiveRecord.
-- ar_translate       - Translate for you your ActiveRecord columns.
-- auto_locale        - Switch for you automatically the I18n.locale.
+- access             - Access restriction via rack-contrib.
+- ar\_permalink       - Generate permalink for a specified column on ActiveRecord.
+- ar\_permalink\_i18n  - Generate permalink for a specified multi language column(s) on ActiveRecord.
+- ar\_textile         - Full support to textile with ActiveRecord.
+- ar\_translate       - Translate for you your ActiveRecord columns.
+- auto\_locale        - Switch for you automatically the I18n.locale.
 - barista            - Add support for Coffeescript via Barista.
+- better\_error       - Add support for the `better_error` Gem.
 - blueprint          - Blueprint CSS.
 - bootstrap          - Add Twitter bootstrap CSS.
 - bug                - rack-bug plugin.
@@ -46,12 +47,12 @@ To run plugin,
 - deflect            - Deflect(DOS protection) via rack-contrib.
 - disqus             - Disqus Commenting System via disqus gem.
 - dreamhost          - Deploy your app on DreamHost.com.
-- exception_notifier - Send errors through mail or/and to redmine.
-- flash_session      - Middleware that help you in passing your session in the URI, when it should be in the cookie.
+- exception\_notifier - Send errors through mail or/and to redmine.
+- flash\_session      - Middleware that help you in passing your session in the URI, when it should be in the cookie.
 - googleanalytics    - Google Analytics via rack-google-analytic.
-- heroku             - Prepare app for deployment to Heroku ( Thanks to commuter )
-- hoptoad            - HopToad notification via rack_hoptoad.
-- jammit             - Add Asset Packaging via jammit-sinatra ( Thanks to railsjedi ).
+- heroku             - Prepare app for deployment to Heroku (thanks to commuter).
+- hoptoad            - HopToad notification via rack\_hoptoad.
+- jammit             - Add Asset Packaging via jammit-sinatra (thanks to railsjedi).
 - maintenance        - Maintenance page plugin via rack-maintenance.
 - omniauth           - Authentication Plugin for OAuth2, Facebook, Twitter, Campfire via omniauth.
 - openid             - OpenID authentication via rack-openid.
@@ -60,7 +61,7 @@ To run plugin,
 - recaptcha          - CAPTCHA verification using RECAPTCHA API via rack-recaptcha.
 - resque             - Add support for the resque redis based background worker.
 - rewrite            - Rewrite Rules via rack-rewrite.
-- secure_only        - Run app on https via rack-secure\_only ( Thanks to splir ).
+- secure\_only        - Run app on https via rack-secure\_only (thanks to splir).
 - tripoli            - Tripoli CSS.
 - twitter-login      - Twitter Login Authentication via twitter-login.
 - vcr                - Add VCR to your test suite.
@@ -74,7 +75,7 @@ If you want to contribute with a plugin please follow the convention of having `
 
 ### Templates
 
-The templates folder contains full project generation templates. These files follow the convention of having *_template*
+The templates folder contains full project generation templates. These files follow the convention of having *\_template*
 appended to the name. (i.e **sampleblog_template.rb**) Included template are:
 
 
