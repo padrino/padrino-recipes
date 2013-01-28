@@ -1,8 +1,3 @@
-# Padrino-Recipes
-
-Padrino is the godfather of Sinatra. These are some of his recipes.
-
-
 ## Preface
 
 Padrino is a ruby framework built upon the excellent [Sinatra Microframework](http://www.sinatrarb.com).
