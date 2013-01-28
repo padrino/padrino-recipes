@@ -12,7 +12,7 @@ Padrino project. A template can be used as a template for a completely new Padri
 
 ### Plugins
 
-To run plugin:
+To run a plugin:
 
 
     $ cd <path-to-my-padrino-app>
@@ -72,8 +72,8 @@ To run a template:
     $ padrino-gen project my_project --template [template_path]
 
 
-The templates folder contains full project generation templates. These files follow the convention of having *\_template*
-appended to the name. (i.e **sampleblog_template.rb**) Included template are:
+The templates folder contains full project generation templates. These files follow the convention of having *_template*
+appended to the name (i.e **sampleblog_template.rb**). Included template are:
 
 
 - sampleblog - [sample blog tutorial](http://www.padrinorb.com/guides/blog-tutorial)
