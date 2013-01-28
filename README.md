@@ -10,18 +10,9 @@ The recipes consists of two types: *plugins* and *templates*. A plugin adds addi
 Padrino project. A template can be used as a template for a completely new Padrino application.
 
 
-To run a template,
-
-
-    $ padrino-gen project my_project --template [template_path]
-
-
-The templates are separated into two types:
-
-
 ### Plugins
 
-To run plugin,
+To run plugin:
 
 
     $ cd <path-to-my-padrino-app>
@@ -74,6 +65,12 @@ If you want to contribute with a plugin please follow the convention of having `
 
 
 ### Templates
+
+To run a template:
+
+
+    $ padrino-gen project my_project --template [template_path]
+
 
 The templates folder contains full project generation templates. These files follow the convention of having *\_template*
 appended to the name. (i.e **sampleblog_template.rb**) Included template are:
