@@ -1,6 +1,6 @@
 ## Preface
 
-Padrino is a ruby framework built upon the excellent [Sinatra Microframework](http://www.sinatrarb.com).
+Padrino is a Ruby framework built upon the excellent [Sinatra Microframework](http://www.sinatrarb.com).
 Sinatra is a DSL for creating simple web applications in Ruby with speed and minimal effort.
 This framework tries hard to make it as fun and easy as possible to code much more advanced web applications by
 building upon the Sinatra philosophies and foundation.
@@ -75,5 +75,5 @@ appended to the name. (i.e __sampleblog_template.rb__) Included template are:
 
 ## Contribute
 
-Feel free to fork and add on to these recipes!  check out the [Padrino Framework](http://www.padrinorb.com) and its
+Feel free to fork and add on to these recipes! Check out the [Padrino Framework](http://www.padrinorb.com) and its
 [git repo](http://github.com/padrino/padrino-framework).
