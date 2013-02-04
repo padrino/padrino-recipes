@@ -87,7 +87,7 @@ generate :model, "upload file:text created_at:datetime"
 
 case fetch_component_choice(:orm)
 when 'mini_record'
-  prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/active_record'\n"
+  prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/activerecord'\n"
 when 'datamapper'
   prepend_file destination_root('models/upload.rb'), "require 'carrierwave/datamapper'\n"
   inject_into_file destination_root('models/upload.rb'),", :auto_validation => false\n", :after => "property :file, Text"
