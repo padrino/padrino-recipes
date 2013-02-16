@@ -1,52 +1,89 @@
 ##
 # A Plugin to prepare a Padrino app for deployment to www.dreamhost.com
-# Dreamhost uses an earlier Ruby version (1.8.7) and very old rack version (1.3.6)!
+# With this version of plugin, you now use any version of ruby (mri)
+# into your dreamhost shared hosting (yes you now use also ruby 1.9.x !! yeahhh)
 #
 # IMPORTANT !!!
-# To bypass this problem, you SHOULD NOT use Passenger as your rack server.
-# Disable it by going to the Dreamhost control panel and unchecking
-# 'Passenger (Ruby/Python apps only)'
 #
-# TIPS :
+# To use a different ruby version, you need to install rbenv into your shell account
+# (i've' tested only rbenv, sorry)
 #
-# If you wish to use ActiveRecord >= 3.2 (Padrino >= 0.10.6) you first have to 
-# install a new version of rubygems on your Dreamhost server because the existing one 
-# already installed is so  old (1.3.6) it is incompatible:
-# read the wiki Dreamhost or follow these steps:
-# $ cd ~/
-# $ mkdir. Gem bin lib src
-# $ cd src
-# $ wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.15.tgz  (the latest version at the present time)
-# $ tar xvf rubygems-1.8.15.tgz
-# $ cd rubygems-1.8.15
-# $ ruby setup.rb - prefix = $HOME
-# $ cd ~/bin
-# $ ln-s gem1.8 gem
-# Add the following lines in the  ~/.bash_profile
-# $ export PATH = "$HOME/bin:$HOME/.gems/bin:$PATH"
-# $ export RUBYLIB = "$HOME/lib:$RUBYLIB"
-# then
-# $ source ~/.Bash_profile
-# $ which gem # Should return /home/USERNAME/bin/gem
-# $ gem-v # Should return 1.8.15
-# DH wiki: http://wiki.dreamhost.com/RubyGems
+# HOW TO INSTALL RBENV:
+#
+# full code: http://git.io/jLwG7g
+#
+# THANKS TO @micahchalmer !!!!
+# Initial setup for Ruby 1.9.3 on DreamHost shared hosting.
+# We assume you're already in your project's root directory, which should
+# also be the directory configured as "web directory" for your domain
+# in the DreamHost panel.
+#
+#
+# Install rbenv and ruby-build
+# $ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+# $ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+#
+# Create temporary directory--DreamHost does not allow files in /tmp to be
+# executed, which makes the default not work
+# $ mkdir ~/.rbenv/BUILD_TEMP
+#
+# DreamHost will set your GEM_HOME and GEM_PATH for you, but this conflicts
+# with rbenv, so we unset them here.  You'll want to do this in your .bashrc
+# on the dreamhost account.
+# $ unset GEM_HOME
+# $ unset GEM_PATH
+#
+# Add rbenv to PATH and let it set itself up.
+# You probably want these two lines in your .bashrc as well:
+# $ export PATH=~/.rbenv/bin:"$PATH"
+# $ eval "$(~/.rbenv/bin/rbenv init -)"
+#
+# Decide which version of Ruby we're going to install and use.
+# $ NEW_RUBY_VERSION=1.9.3-p385
+#
+# Using that as the temp space, build and install ruby 1.9.3
+# $ TMPDIR=~/.rbenv/BUILD_TEMP rbenv install $NEW_RUBY_VERSION
+#
+# Now everything is set up properly, you should be able to set your
+# directory to use the new ruby:
+# $ rbenv local $NEW_RUBY_VERSION
+#
+# Bundler doesn't come with ruby, so install it first:
+# $ gem install bundler
+#
+# Then use it to install the rest of your gems:
+# $ bundle install
+#
+# Change value of use_rbenv to true into dispatch.fcgi
+#
+# Don't forget to make your dispatch.fcgi world-executable but not world-writable by executing
+# replace PADRINO_ROOT with real path of application
+# $ chmod 755 PADRINO_ROOT/public/dispatch.fcgi
 
 DISPATCH_FCGI = <<-DFCGI
-#!/usr/bin/ruby
-require 'rubygems'
-require 'fcgi'
+#!/bin/bash
+use_rbenv=false
+padrino_dir=`pwd`
+padrino_dir=${padrino_dir/public/}
+err_log_file="${padrino_dir}/log/dispatch_err.log"
 
-# DreamHost HACK !!!
-# Set GEM_PATH and GEM_HOME ("USER_NAME" is your dreamhost user)
-ENV['GEM_HOME'] ||= '/home/USER_NAME/.gems'
-Gem.clear_paths
-
-ENV['PADRINO_ENV'] ||= 'production'
-
-require File.expand_path("../../config/boot.rb", __FILE__)
-
-Rack::Handler::FastCGI.run(Padrino.application)
+if $use_rbenv ; then
+  unset GEM_HOME
+  unset GEM_PATH
+  export PATH=~/.rbenv/bin:"$PATH"
+  eval "$(~/.rbenv/bin/rbenv init -)"
+  exec ~/.rbenv/shims/ruby "${padrino_dir}public/dispatch_fcgi.rb" "$@" 2>>"${err_log_file}"
+else
+  export GEM_HOME=~/.gems
+    exec ruby "${padrino_dir}public/dispatch_fcgi.rb" "$@" 2>>"${err_log_file}"
+fi
 DFCGI
+
+DISPATCH_FCGIRB = <<-DFCGIRB
+ENV['PADRINO_ENV'] ||= 'production'
+require File.expand_path("../../config/boot.rb", __FILE__)
+Rack::Handler::FastCGI.run(Padrino.application)
+DFCGIRB
 
 DOT_HTACCESS = <<-DHTX
 <IfModule mod_fastcgi.c>
@@ -62,12 +99,10 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ dispatch.fcgi/$1 [QSA,L]
-
-ErrorDocument 500 "Padrino application failed to start properly"
-
 DHTX
 
 create_file destination_root('public/dispatch.fcgi'), DISPATCH_FCGI
+create_file destination_root('public/dispatch_fcgi.rb'), DISPATCH_FCGIRB
 create_file destination_root('public/.htaccess'), DOT_HTACCESS
 
 unless File.read('Gemfile').include?('fcgi')
@@ -77,18 +112,11 @@ end
 require_dependencies 'fcgi'
 
 shell.say ""
-shell.say "Don't forget to swap USER_NAME for you Dreamhost account name in public/dispatch.fcgi"
-shell.say "Don't forget to change these file permissions:"
-shell.say "$ chmod 755 public"
-shell.say "$ chmod 755 public/dispatch.fcgi"
+shell.say "Don't forget to make your dispatch.fcgi world-executable but not world-writable by executing"
+shell.say "$ chmod 755 PADRINO_ROOT/public/dispatch.fcgi"
 shell.say ""
 shell.say "IMPORTANT:"
-shell.say "Go to the Dreamhost control panel and uncheck"
-shell.say "Passenger (Ruby/Python apps only)"
-shell.say ""
-shell.say "Run bundler"
-shell.say "$ bundle install"
-shell.say ""
-shell.say "Finally check to see if your site is working:"
-shell.say "$ ruby public/dispatch.fcgi"
+shell.say "If you need to use a different ruby version, see this source code rogit"
+shell.say "http://git.io/jLwG7g"
+shell.say "and change value of use_rbenv to true into dispatch.fcgi"
 shell.say ""
