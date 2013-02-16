@@ -62,7 +62,7 @@
 
 DISPATCH_FCGI = <<-DFCGI
 #!/bin/bash
-use_rbenv=true
+use_rbenv=false
 padrino_dir=`pwd`
 padrino_dir=${padrino_dir/public/}
 err_log_file="${padrino_dir}/log/dispatch_err.log"
