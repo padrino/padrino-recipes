@@ -14,6 +14,7 @@ APP
 inject_into_file 'app/app.rb', APP_INIT, :after => "#\n  end\n"
 
 # Generating padrino admin
+require_dependencies('bcrypt-ruby', :require => 'bcrypt')
 generate :admin
 rake "ar:create ar:migrate seed"
 
