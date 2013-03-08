@@ -1,5 +1,5 @@
 # Template for Sample Blog tutorial at http://www.padrinorb.com/guides/blog-tutorial
-project :test => :shoulda, :renderer => :haml, :stylesheet => :sass, :script => :jquery, :orm => :activerecord, :bundle => true
+project :test => :shoulda, :renderer => :haml, :stylesheet => :sass, :script => :jquery, :orm => :activerecord
 
 # Default routes
 APP_INIT = <<-APP
