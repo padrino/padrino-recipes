@@ -14,8 +14,8 @@ APP
 inject_into_file 'app/app.rb', APP_INIT, :after => "#\n  end\n"
 
 # Generating padrino admin
-generate :model, "post title:string body:text"i
-nject_into_file 'db/migrate/002_create_posts.rb',"      t.timestamps\n",:after => "t.text :body\n"
+inject_into_file 'Gemfile', "gem 'bcrypt-ruby', :require => 'bcrypt'\n", :after => "# Component requirements\n"
+run_bundler
 generate :admin
 rake "ar:create ar:migrate seed"
 
