@@ -1,5 +1,5 @@
 # Template for Sample Blog tutorial at http://www.padrinorb.com/guides/blog-tutorial
-project :test => :shoulda, :renderer => :haml, :stylesheet => :sass, :script => :jquery, :orm => :activerecord, :bundle => true
+project :test => :shoulda, :renderer => :haml, :stylesheet => :sass, :script => :jquery, :orm => :activerecord
 
 # Default routes
 APP_INIT = <<-APP
@@ -14,6 +14,8 @@ APP
 inject_into_file 'app/app.rb', APP_INIT, :after => "#\n  end\n"
 
 # Generating padrino admin
+inject_into_file 'Gemfile', "gem 'bcrypt-ruby', :require => 'bcrypt'\n", :after => "# Component requirements\n"
+run_bundler
 generate :admin
 rake "ar:create ar:migrate seed"
 
