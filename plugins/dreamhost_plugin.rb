@@ -74,8 +74,12 @@ if $use_rbenv ; then
   eval "$(~/.rbenv/bin/rbenv init -)"
   exec ~/.rbenv/shims/ruby "${padrino_dir}public/dispatch_fcgi.rb" "$@" 2>>"${err_log_file}"
 else
+  padrino_dir=`pwd`
+  err_log_file="${padrino_dir}/log/dispatch_err.log"
   export GEM_HOME=~/.gems
-    exec ruby "${padrino_dir}public/dispatch_fcgi.rb" "$@" 2>>"${err_log_file}"
+  export GEM_PATH="$GEM_HOME:/usr/lib/ruby/gems/1.8"
+  export PATH="$GEM_HOME/bin:$PATH"
+  exec ruby "${padrino_dir}/dispatch_fcgi.rb" "$@" 2>>"${err_log_file}"
 fi
 DFCGI
 
