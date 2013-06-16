@@ -11,7 +11,7 @@ APP_INIT = <<-APP
     render :haml, "%p This is a sample blog created to demonstrate the power of Padrino!"
   end
 APP
-inject_into_file 'app/app.rb', APP_INIT, :after => "#\n  end\n"
+inject_into_file 'app/app.rb', APP_INIT, :before => "#\n  end\n"
 
 # Generating padrino admin
 inject_into_file 'Gemfile', "gem 'bcrypt-ruby', :require => 'bcrypt'\n", :after => "# Component requirements\n"
