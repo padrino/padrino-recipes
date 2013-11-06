@@ -79,7 +79,7 @@ POST_PARTIAL = <<-POST
   .date= time_ago_in_words(post.created_at || Time.now) + ' ago'
   .body= simple_format(post.body)
   .details
-    .author Posted by \#{post.account.email}
+    .author Posted by \#{post.account.name}
 POST
 create_file 'app/views/posts/_post.haml', POST_PARTIAL
 
@@ -92,7 +92,7 @@ POST_SHOW = <<-POST
     .date= time_ago_in_words(@post.created_at || Time.now) + ' ago'
     .body= simple_format(@post.body)
     .details
-      .author Posted by \#{@post.account.email}
+      .author Posted by \#{@post.account.name}
 %p= link_to 'View all posts', url_for(:posts, :index)
 POST
 create_file 'app/views/posts/show.haml', POST_SHOW
