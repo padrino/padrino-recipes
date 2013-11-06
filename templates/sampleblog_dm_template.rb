@@ -32,7 +32,7 @@ POST_INDEX_ROUTE = <<-POST
       render 'posts/index'
 POST
 POST_SHOW_ROUTE = <<-POST
-      @post = Post.find_by_id(params[:id])
+      @post = Post.get(params[:id])
       render 'posts/show'
 POST
 inject_into_file 'app/controllers/posts.rb', POST_INDEX_ROUTE, :after => "get :index do\n"
