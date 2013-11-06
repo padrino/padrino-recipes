@@ -32,7 +32,7 @@ POST_INDEX_ROUTE = <<-POST
       render 'posts/index'
 POST
 POST_SHOW_ROUTE = <<-POST
-      @post = Post.find_by_id(params[:id])
+      @post = Post.get(params[:id])
       render 'posts/show'
 POST
 inject_into_file 'app/controllers/posts.rb', POST_INDEX_ROUTE, :after => "get :index do\n"
@@ -75,7 +75,7 @@ create_file 'app/views/posts/index.haml', POST_INDEX
 # Create _post.haml
 POST_PARTIAL = <<-POST
 .post
-  .title= link_to post.title, url_for(:posts, :show, :id => post)
+  .title= link_to post.title, url_for(:posts, :show, :id => post.id)
   .date= time_ago_in_words(post.created_at || Time.now) + ' ago'
   .body= simple_format(post.body)
   .details
