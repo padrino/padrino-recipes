@@ -27,7 +27,7 @@ To run a plugin:
 - ar\_translate       - Translate for you your ActiveRecord columns.
 - auto\_locale        - Switch for you automatically the I18n.locale.
 - barista            - Add support for Coffeescript via Barista.
-- better\_error       - Add support for the `better_error` Gem.
+- better\_errors       - Add support for the `better_errors` Gem.
 - blueprint          - Blueprint CSS.
 - bootstrap          - Add Twitter bootstrap CSS.
 - bug                - rack-bug plugin.
