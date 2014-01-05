@@ -27,3 +27,4 @@ end
 CONFIG
 
 inject_into_file destination_root('config/boot.rb'), CONFIG, :after => "Bundler.require(:default, PADRINO_ENV)\n"
+inject_into_file destination_root('app/app.rb'), "    set :protect_from_csrf, except: %r{/__better_errors/\d+/\w+\z}", :after => "Padrino::Application\n"
