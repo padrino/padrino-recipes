@@ -31,6 +31,7 @@ To run a plugin:
 - blueprint          - Blueprint CSS.
 - bootstrap          - Add Twitter bootstrap CSS.
 - bug                - rack-bug plugin.
+- camorra            - Add ZURB Foundation CSS
 - carrierwave        - Carrierwave plugin via carrierwave.
 - codehighlighter    - Code Highlighting via rack-codehighlighter.
 - coderay            - Code Highlighting via rack-coderay.
