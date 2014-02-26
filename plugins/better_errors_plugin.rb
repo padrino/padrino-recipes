@@ -16,7 +16,6 @@ GEMFILE
 append_file("Gemfile", GEMFILE)
 
 CONFIG = <<-CONFIG
-
 # Setup better_errors
 if Padrino.env == :development
   require 'better_errors'
@@ -24,7 +23,13 @@ if Padrino.env == :development
   BetterErrors.application_root = PADRINO_ROOT
   BetterErrors.logger = Padrino.logger
 end
+
 CONFIG
 
-inject_into_file destination_root('config/boot.rb'), CONFIG, :after => "Bundler.require(:default, PADRINO_ENV)\n"
-inject_into_file destination_root('app/app.rb'), "    set :protect_from_csrf, except: %r{/__better_errors/\d+/\w+\z}", :after => "Padrino::Application\n"
+SETTING = <<-SETTING
+  # Use better_errors
+  set :protect_from_csrf, except: %r{/__better_errors/\\d+/\\w+\\z} if Padrino.env == :development
+SETTING
+
+inject_into_file destination_root('config/boot.rb'), CONFIG,  :before => "Padrino.load!"
+inject_into_file destination_root('config/apps.rb'), SETTING, :after  => "Padrino.configure_apps do\n"
