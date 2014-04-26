@@ -114,7 +114,7 @@ APPLICATION = <<-LAYOUT
     #container
       #main= yield
       #sidebar
-        - form_tag url_for(:posts, :index), :method => 'get'  do
+        = form_tag url_for(:posts, :index), :method => 'get'  do
           Search for:
           = text_field_tag 'query', :value => params[:query]
           = submit_tag 'Search'
