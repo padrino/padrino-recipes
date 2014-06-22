@@ -30,6 +30,7 @@ To run a plugin:
 - better\_errors       - Add support for the `better_errors` Gem.
 - blueprint          - Blueprint CSS.
 - bootstrap          - Add Twitter bootstrap CSS.
+- fontawesome        - Font Awesome CSS + Fonts.
 - bug                - rack-bug plugin.
 - camorra            - Add ZURB Foundation CSS
 - carrierwave        - Carrierwave plugin via carrierwave.
