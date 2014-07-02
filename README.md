@@ -51,6 +51,7 @@ To run a plugin:
 - openid             - OpenID authentication via rack-openid.
 - payment            - Payment Plugin via rack-payment.
 - protection         - Add support rack-protection to your app to protect against certain security exploitations.
+- raphaeljs          - RaphaelJS libraries.
 - recaptcha          - CAPTCHA verification using RECAPTCHA API via rack-recaptcha.
 - resque             - Add support for the resque redis based background worker.
 - rewrite            - Rewrite Rules via rack-rewrite.
