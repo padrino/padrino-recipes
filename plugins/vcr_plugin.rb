@@ -1,6 +1,6 @@
 # VCR Plugin
 #
-# Adds VCR to your test config using fakeweb.
+# Adds VCR to your test config using webmock.
 #
 VCR = <<-CONF
 
