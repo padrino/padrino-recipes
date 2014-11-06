@@ -1,6 +1,7 @@
-# Add some style to Padrino. Plugin to install ZURB Foundation on Padrino
+# Add some style to Padrino. Plugin to install ZURB Foundation (v5.1.0.0) on Padrino
 #
 # Created by Felipe Cabargas <felipe@cabargas.com>
+# Master Plugin repository: github.com/felipecabargas/camorra
 # Copyleft please!
 #
 # SCSS
