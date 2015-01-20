@@ -32,4 +32,4 @@ SETTING = <<-SETTING
 SETTING
 
 inject_into_file destination_root('config/boot.rb'), CONFIG,  :before => "Padrino.load!"
-inject_into_file destination_root('config/apps.rb'), SETTING, :after  => "Padrino.configure_apps do\n"
+inject_into_file destination_root('config/apps.rb'), SETTING, :after  => "set :protect_from_csrf, true\n"
