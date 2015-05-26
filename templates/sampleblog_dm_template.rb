@@ -28,7 +28,7 @@ rake 'dm:migrate'
 generate :controller, "posts get:index get:show"
 gsub_file('app/controllers/posts.rb', /^\s+\#\s+.*\n/,'')
 POST_INDEX_ROUTE = <<-POST
-      @posts = Post.all(:order => :created_at.desc)
+      @posts = Post.all.order('created_at.desc')
       render 'posts/index'
 POST
 POST_SHOW_ROUTE = <<-POST
