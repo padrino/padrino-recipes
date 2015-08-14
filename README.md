@@ -51,8 +51,10 @@ To run a plugin:
 - openid             - OpenID authentication via rack-openid.
 - payment            - Payment Plugin via rack-payment.
 - protection         - Add support rack-protection to your app to protect against certain security exploitations.
+- pry\_byebug         - Use pry-byebug in Padrino. Use pry\_debugger plugin for MRI 1.9.3 or older
+- pry\_debugger       - Use pry-debugger in Padrino. Use pry\_byebug plugin for MRI 2.0.0 or newer
 - raphaeljs          - RaphaelJS libraries.
-- raphy_charts       - Raphy Charts - A RaphaelJS based HTML5/SVG charts library.
+- raphy\_charts       - Raphy Charts - A RaphaelJS based HTML5/SVG charts library.
 - recaptcha          - CAPTCHA verification using RECAPTCHA API via rack-recaptcha.
 - resque             - Add support for the resque redis based background worker.
 - rewrite            - Rewrite Rules via rack-rewrite.
