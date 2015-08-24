@@ -40,6 +40,7 @@ To run a plugin:
 - disqus             - Disqus Commenting System via disqus gem.
 - dreamhost          - Deploy your app on DreamHost.com.
 - exception\_notifier - Send errors through mail or/and to redmine.
+- factory\_girl        - A library for setting up Ruby objects as test data.
 - flash\_session      - Middleware that help you in passing your session in the URI, when it should be in the cookie.
 - fontawesome        - Font Awesome CSS + Fonts.
 - googleanalytics    - Google Analytics via rack-google-analytic.
