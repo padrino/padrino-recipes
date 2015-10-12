@@ -5,12 +5,12 @@ LIB = <<-LIB
 begin
   require 'factory_girl'
   # Sequel does not have a save! method
-  if defined?(Sequel) do
+  if defined?(Sequel)
     FactoryGirl.define do
       to_create { |instance| instance.save }
     end
   end
-  FactoryGirl.load_definitions
+  FactoryGirl.find_definitions
 rescue LoadError
 end
 LIB
