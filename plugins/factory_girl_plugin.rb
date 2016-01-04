@@ -15,7 +15,7 @@ rescue LoadError
 end
 LIB
 
-create_file 'lib/factory-girl.rb', LIB
+create_file 'lib/plugins/factory-girl.rb', LIB
 
 GEMFILE = <<-GEMFILE
 group :development, :test do
