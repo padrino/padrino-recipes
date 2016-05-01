@@ -14,24 +14,23 @@ Padrino project. A template can be used as a template for a completely new Padri
 
 To run a plugin:
 
+```sh
+$ cd <path-to-my-padrino-app>
+$ padrino-gen plugin <name-of-the-plugin>
+```
 
-    $ cd <path-to-my-padrino-app>
-    $ padrino-gen plugin <name-of-the-plugin>
 
-
-- 960                - 960.gs grid
-- access             - Access restriction via rack-contrib.
-- ar\_permalink       - Generate permalink for a specified column on ActiveRecord.
-- ar\_permalink\_i18n  - Generate permalink for a specified multi language column(s) on ActiveRecord.
-- ar\_textile         - Full support to textile with ActiveRecord.
-- ar\_translate       - Translate for you your ActiveRecord columns.
-- auto\_locale        - Switch for you automatically the I18n.locale.
-- barista            - Add support for Coffeescript via Barista.
-- better\_errors       - Add support for the `better_errors` Gem.
-- blueprint          - Blueprint CSS.
-- bootstrap          - Add Twitter bootstrap CSS.
-- bug                - rack-bug plugin.
-- camorra            - Add ZURB Foundation CSS.
+- 960: Installs the [960 grid system](https://github.com/nathansmith/960-Grid-System)
+- access: Access Plugin via [rack-contrib](http://github.com/rack/rack-contrib/)
+- ar\_permalink: Generate permalink for a specified column on ActiveRecord.
+- ar\_permalink\_i18n: Generate permalink for a specified multi language column(s) on ActiveRecord.
+- ar\_translate: Translate for you your ActiveRecord columns.
+- auto\_locale: Switch the I18n.locale automatically based on the URL.
+- barista: Simple, transparent [CoffeeScript](https://github.com/jashkenas/coffeescript) support.
+- better\_errors: Install the [better_errors gem](https://github.com/charliesome/better_errors).
+- bootstrap: Install the latest [twitter bootstrap](https://github.com/twbs/bootstrap) files.
+- bug: (rack-bug)[http://github.com/brynary/rack-bug] debugging toolbar for Rack applications.
+- camorra: Install (ZURB Foundation 5 framework)[http://foundation.zurb.com/].
 - carrierwave        - Carrierwave plugin via carrierwave.
 - codehighlighter    - Code Highlighting via rack-codehighlighter.
 - coderay            - Code Highlighting via rack-coderay.
@@ -87,6 +86,11 @@ appended to the name (i.e **sampleblog_template.rb**). Included template are:
 - lipsiasoft - template with haml/960/exception notifier and more used by [LipsiaSOFT](http://www.lipsiasoft.com)
 - mongochist - templates that generate mongoid/mongomapper with machinist
 
+
+## Broken plugins
+
+- ar\_textile: Full support to textile with ActiveRecord
+- blueprint: Install the [blueprint grid system](https://github.com/joshuaclayton/blueprint-css)
 
 ## Contribute
 
