@@ -79,9 +79,12 @@ The templates folder contains full project generation templates. These files fol
 appended to the name (i.e **sampleblog_template.rb**). Included template are:
 
 
-- sampleblog - [sample blog tutorial](http://padrinorb.com/guides/getting-started/blog-tutorial)
-- lipsiasoft - template with haml/960/exception notifier and more used by [LipsiaSOFT](http://www.lipsiasoft.com)
-- mongochist - templates that generate mongoid/mongomapper with machinist
+- angular: Template for an AngularJS app. It uses bower to manage your frontend resources.
+- lipsiasoft: template with haml/960/exception notifier and more used by [LipsiaSOFT](http://www.lipsiasoft.com).
+- mongochist: templates that generate mongoid/mongomapper with machinist.
+- sampleblog: [sample blog tutorial](http://padrinorb.com/guides/getting-started/blog-tutorial).
+- sampleblog_dm: [sample blog tutorial](http://padrinorb.com/guides/getting-started/blog-tutorial) with `DataMapper`
+  instead of `ActiveRecord`.
 
 
 ## Broken plugins
