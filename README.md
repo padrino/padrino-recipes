@@ -1,4 +1,4 @@
-## Preface
+# Preface
 
 Padrino is a Ruby framework built upon the excellent [Sinatra Microframework](http://www.sinatrarb.com). Sinatra is a
 DSL for creating simple web applications in Ruby with speed and minimal effort. This framework tries hard to make it as
@@ -10,7 +10,7 @@ The recipes consists of two types: *plugins* and *templates*. A plugin adds addi
 Padrino project. A template can be used as a template for a completely new Padrino application.
 
 
-### Plugins
+## Plugins
 
 To run a plugin:
 
@@ -31,46 +31,43 @@ $ padrino-gen plugin <name-of-the-plugin>
 - bootstrap: Install the latest [twitter bootstrap](https://github.com/twbs/bootstrap) files.
 - bug: (rack-bug)[http://github.com/brynary/rack-bug] debugging toolbar for Rack applications.
 - camorra: Install (ZURB Foundation 5 framework)[http://foundation.zurb.com/].
-- carrierwave        - Carrierwave plugin via carrierwave.
-- codehighlighter    - Code Highlighting via rack-codehighlighter.
-- coderay            - Code Highlighting via rack-coderay.
-- coffee             - CoffeeScript plugin via rack-coffee.
-- deflect            - Deflect(DOS protection) via rack-contrib.
-- disqus             - Disqus Commenting System via disqus gem.
-- dreamhost          - Deploy your app on DreamHost.com.
-- exception\_notifier - Send errors through mail or/and to redmine.
-- factory\_girl        - A library for setting up Ruby objects as test data.
-- flash\_session      - Middleware that help you in passing your session in the URI, when it should be in the cookie.
-- fontawesome        - Font Awesome CSS + Fonts.
-- googleanalytics    - Google Analytics via rack-google-analytic.
-- heroku             - Prepare app for deployment to Heroku (thanks to commuter).
-- hoptoad            - HopToad notification via rack\_hoptoad.
-- jammit             - Add Asset Packaging via jammit-sinatra (thanks to railsjedi).
-- maintenance        - Maintenance page plugin via rack-maintenance.
-- omniauth           - Authentication Plugin for OAuth2, Facebook, Twitter, Campfire via omniauth.
-- openid             - OpenID authentication via rack-openid.
-- payment            - Payment Plugin via rack-payment.
+- codehighlighter: Code highlighting via [rack-codehighlighter](https://github.com/wbzyl/rack-codehighlighter)
+- coffee: [CoffeeScript](https://github.com/jashkenas/coffeescript) plugin via [rack-coffee](https://github.com/mattly/rack-coffee).
+- deflect: Deflect (DOS protection) via [rack-contrib](http://github.com/rack/rack-contrib/).
+- disqus: [Disqus](https://disqus.com/) commenting system via [disqus gem](https://github.com/norman/disqus).
+- dreamhost: Deploy your app on [DreamHost](https://www.dreamhost.com/).
+- exception\_notifier: Send errors through mail or/and to [redmine](http://www.redmine.org/) via [exception_notifier](https://github.com/padrino/padrino-contrib/blob/master/lib/padrino-contrib/exception_notifier.rb).
+- factory\_girl: A [library](https://github.com/thoughtbot/factory_girl) for setting up Ruby objects as test data.
+- flash\_session: Middleware that help you in passing your session in the URI, when it should be in the cookie via [flash_session](https://github.com/padrino/padrino-contrib/blob/master/lib/padrino-contrib/flash_session.rb).
+- fontawesome: Installing [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
+- googleanalytics: [Google Analytics](https://analytics.google.com/) via [rack-google-analytic](https://github.com/kangguru/rack-google-analytics).
+- heroku: Prepare app for deployment to [Heroku](https://heroku.com/).
+- hoptoad: [HopToad](https://github.com/thoughtbot/hoptoad_notifier) notification via rack_hoptoad](https://github.com/atmos/rack_hoptoad).
+- jammit: Add Asset Packaging via [jammit-sinatra](https://github.com/jacquescrocker/jammit-sinatra).
+- maintenance: Maintenance page plugin via [rack-maintenance](http://github.com/ddollar/rack-maintenance).
+- omniauth: Authentication Plugin for OAuth2, Facebook, Twitter, Campfire via [omniauth](https://github.com/intridea/omniauth/).
+- openid: [OpenID](http://openid.net/) authentication via [rack-openid](https://github.com/josh/rack-openid).
+- payment: Payment Plugin via [rack-payment](https://rubygems.org/gems/rack-payment/versions/0.1.4)
 - protection         - Add support rack-protection to your app to protect against certain security exploitations.
-- pry\_byebug         - Use pry-byebug in Padrino. Use pry\_debugger plugin for MRI 1.9.3 or older
-- pry\_debugger       - Use pry-debugger in Padrino. Use pry\_byebug plugin for MRI 2.0.0 or newer
-- raphaeljs          - RaphaelJS libraries.
-- raphy\_charts       - Raphy Charts - A RaphaelJS based HTML5/SVG charts library.
-- recaptcha          - CAPTCHA verification using RECAPTCHA API via rack-recaptcha.
-- resque             - Add support for the resque redis based background worker.
-- rewrite            - Rewrite Rules via rack-rewrite.
-- secure\_only        - Run app on https via rack-secure\_only (thanks to splir).
-- tripoli            - Tripoli CSS.
-- twitter-login      - Twitter Login Authentication via twitter-login.
-- vcr                - Add VCR to your test suite.
-- watchr             - Generates watchr test scripts.
-- will\_paginate     - Add support for will\_paginate.
+- pry\_byebug: Use [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug) in Padrino. Use pry_debugger plugin for MRI 1.9.3 or older.
+- pry\_debugger: Use [pry-debugger](https://github.com/nixme/pry-debugger) in Padrino. Use pry_byebug plugin for MRI 2.0.0 or newer.
+- raphy\_charts: [Raphy Charts](https://github.com/jcarver989/raphy-charts) - a RaphaelJS based HTML5/SVG charts library.
+- recaptcha: CAPTCHA verification using RECAPTCHA API via [rack-recaptcha](https://github.com/achiu/rack-recaptcha).
+- resque: Add support for the [resque](https://github.com/resque/resque) redis based background worker.
+- rewrite: Rewrite Rules via [rack-rewrite](https://github.com/jtrupiano/rack-rewrite).
+- secure\_only: Run app on https via [rack-secure_only](https://github.com/spllr/rack-secure_only).
+- tripoli: Add [Tripoli CSS](http://monc.se/tripoli/).
+- twitter-login: Twitter Login Authentication via [twitter-login](https://github.com/mislav/twitter-login)
+- vcr: Add [vcr](https://github.com/vcr/vcr) to your test suite.
+- watchr: Generates [watchr](https://github.com/mynyml/watchr) test scripts.
+- will\_paginate: Add support for [will_paginate](https://github.com/mislav/will_paginate).
 
 
 If you want to contribute with a plugin please follow the convention of having `_plugin` appended to the name (i.e.
 `bootstrap_plugin.rb`).
 
 
-### Templates
+## Templates
 
 To run a template:
 
@@ -89,8 +86,12 @@ appended to the name (i.e **sampleblog_template.rb**). Included template are:
 
 ## Broken plugins
 
-- ar\_textile: Full support to textile with ActiveRecord
-- blueprint: Install the [blueprint grid system](https://github.com/joshuaclayton/blueprint-css)
+- ar\_textile: Full support to textile with ActiveRecord.
+- blueprint: Install the [blueprint grid system](https://github.com/joshuaclayton/blueprint-css).
+- carrierwave: Plugin for [Carrierwave](https://github.com/carrierwaveuploader/carrierwave).
+- coderay: Code Highlighting via [rack-coderay](https://github.com/rubychan/coderay).
+- raphaeljs: Add [RaphaelJS](https://github.com/DmitryBaranovskiy/raphael) libraries.
+
 
 ## Contribute
 
