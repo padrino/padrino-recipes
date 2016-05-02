@@ -44,6 +44,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - heroku: Prepare app for deployment to [Heroku](https://heroku.com/).
 - hoptoad: [HopToad](https://github.com/thoughtbot/hoptoad_notifier) notification via rack_hoptoad](https://github.com/atmos/rack_hoptoad).
 - jammit: Add Asset Packaging via [jammit-sinatra](https://github.com/jacquescrocker/jammit-sinatra).
+- letter_opener: Preview mail in the browser instead of sending vim with [letter_opener](https://github.com/ryanb/letter_opener).
 - maintenance: Maintenance page plugin via [rack-maintenance](http://github.com/ddollar/rack-maintenance).
 - omniauth: Authentication Plugin for OAuth2, Facebook, Twitter, Campfire via [omniauth](https://github.com/intridea/omniauth/).
 - openid: [OpenID](http://openid.net/) authentication via [rack-openid](https://github.com/josh/rack-openid).
