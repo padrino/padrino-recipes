@@ -79,7 +79,7 @@ The templates folder contains full project generation templates. These files fol
 appended to the name (i.e **sampleblog_template.rb**). Included template are:
 
 
-- sampleblog - [sample blog tutorial](http://www.padrinorb.com/guides/blog-tutorial)
+- sampleblog - [sample blog tutorial](http://padrinorb.com/guides/getting-started/blog-tutorial)
 - lipsiasoft - template with haml/960/exception notifier and more used by [LipsiaSOFT](http://www.lipsiasoft.com)
 - mongochist - templates that generate mongoid/mongomapper with machinist
 
