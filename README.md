@@ -71,11 +71,12 @@ If you want to contribute with a plugin please follow the convention of having `
 
 To run a template:
 
+```sh
+$ padrino-gen project my_project --template [template_path]
+```
 
-    $ padrino-gen project my_project --template [template_path]
-
-
-The templates folder contains full project generation templates. These files follow the convention of having *_template*
+The [templates folder](https://github.com/padrino/padrino-recipes/tree/master/templates) contains full project generation templates.
+These files follow the convention of having *_template*
 appended to the name (i.e **sampleblog_template.rb**). Included template are:
 
 
