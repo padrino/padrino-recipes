@@ -49,7 +49,6 @@ $ padrino-gen plugin <name-of-the-plugin>
 - omniauth: Authentication Plugin for OAuth2, Facebook, Twitter, Campfire via [omniauth](https://github.com/intridea/omniauth/).
 - openid: [OpenID](http://openid.net/) authentication via [rack-openid](https://github.com/josh/rack-openid).
 - payment: Payment Plugin via [rack-payment](https://rubygems.org/gems/rack-payment/versions/0.1.4)
-- pry\_byebug: Use [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug) in Padrino. Use pry_debugger plugin for MRI 1.9.3 or older.
 - pry\_debugger: Use [pry-debugger](https://github.com/nixme/pry-debugger) in Padrino. Use pry_byebug plugin for MRI 2.0.0 or newer.
 - raphy\_charts: [Raphy Charts](https://github.com/jcarver989/raphy-charts) - a RaphaelJS based HTML5/SVG charts library.
 - recaptcha: CAPTCHA verification using RECAPTCHA API via [rack-recaptcha](https://github.com/achiu/rack-recaptcha).
