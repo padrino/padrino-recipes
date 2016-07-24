@@ -40,6 +40,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - factory\_girl: A [library](https://github.com/thoughtbot/factory_girl) for setting up Ruby objects as test data.
 - flash\_session: Middleware that help you in passing your session in the URI, when it should be in the cookie via [flash_session](https://github.com/padrino/padrino-contrib/blob/master/lib/padrino-contrib/flash_session.rb).
 - fontawesome: Installing [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
+- goatmail: Preview mail in the browser under `/inbox` in development mode with [goatmail](https://github.com/tyabe/goatmail).
 - googleanalytics: [Google Analytics](https://analytics.google.com/) via [rack-google-analytic](https://github.com/kangguru/rack-google-analytics).
 - heroku: Prepare app for deployment to [Heroku](https://heroku.com/).
 - hoptoad: [HopToad](https://github.com/thoughtbot/hoptoad_notifier) notification via rack_hoptoad](https://github.com/atmos/rack_hoptoad).
