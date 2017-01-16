@@ -62,6 +62,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - vcr: Add [vcr](https://github.com/vcr/vcr) to your test suite.
 - watchr: Generates [watchr](https://github.com/mynyml/watchr) test scripts.
 - will\_paginate: Add support for [will_paginate](https://github.com/mislav/will_paginate).
+- react-sinatra: Add support for [react-sinatra](https://github.com/namusyaka/react-sinatra).
 
 
 If you want to contribute with a plugin please follow the convention of having `_plugin` appended to the name (i.e.
