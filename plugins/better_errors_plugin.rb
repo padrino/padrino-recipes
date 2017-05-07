@@ -28,7 +28,7 @@ CONFIG
 
 SETTING = <<-SETTING
   # Use better_errors
-  set :protect_from_csrf, except: %r{/__better_errors/\\w+/\\w+\\z} if Padrino.env == :development
+  set :protect_from_csrf, except: %r{/__better_errors/\\w+/\\w+\\z} if RACK_ENV == :development
 SETTING
 
 inject_into_file destination_root('config/boot.rb'), CONFIG,  :before => "Padrino.load!"
