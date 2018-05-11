@@ -27,6 +27,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - ar\_translate: Translate for you your ActiveRecord columns.
 - auto\_locale: Switch the I18n.locale automatically based on the URL.
 - barista: Simple, transparent [CoffeeScript](https://github.com/jashkenas/coffeescript) support.
+- bulma: [bulma](https://bulma.io "bulma") is an open source CSS framework based on Flexbox.
 - better\_errors: Install the [better_errors gem](https://github.com/charliesome/better_errors).
 - bootstrap: Install the latest [twitter bootstrap](https://github.com/twbs/bootstrap) files.
 - bug: (rack-bug)[http://github.com/brynary/rack-bug] debugging toolbar for Rack applications.
@@ -66,7 +67,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 
 
 If you want to contribute with a plugin please follow the convention of having `_plugin` appended to the name (i.e.
-`bootstrap_plugin.rb`).
+`bootstrap_plugin.rb`). Don't forget to put your plugin with a short explanation to the README here.
 
 
 ## Templates
