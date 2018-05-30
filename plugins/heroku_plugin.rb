@@ -9,6 +9,9 @@ require 'thor'
 require 'padrino-core/cli/rake'
 
 PadrinoTasks.init
+
+desc 'Create, migrate and seed your database by default'
+task default: %w[ ar:create ar:migrate seed ]
 RAKEFILE
 
 create_file "Rakefile", RAKEFILE
