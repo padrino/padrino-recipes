@@ -33,7 +33,6 @@ $ padrino-gen plugin <name-of-the-plugin>
 - bug: (rack-bug)[http://github.com/brynary/rack-bug] debugging toolbar for Rack applications.
 - camorra: Install (ZURB Foundation 5 framework)[http://foundation.zurb.com/].
 - codehighlighter: Code highlighting via [rack-codehighlighter](https://github.com/wbzyl/rack-codehighlighter)
-- coffee: [CoffeeScript](https://github.com/jashkenas/coffeescript) plugin via [rack-coffee](https://github.com/mattly/rack-coffee).
 - deflect: Deflect (DOS protection) via [rack-contrib](http://github.com/rack/rack-contrib/).
 - disqus: [Disqus](https://disqus.com/) commenting system via [disqus gem](https://github.com/norman/disqus).
 - dreamhost: Deploy your app on [DreamHost](https://www.dreamhost.com/).

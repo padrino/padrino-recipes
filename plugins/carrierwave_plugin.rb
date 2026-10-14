@@ -68,9 +68,9 @@ class Uploader < CarrierWave::Uploader::Base
   #   end
   # end
   ##
-  # White list of extensions which are allowed to be uploaded:
+  # Extensions which are allowed to be uploaded (CarrierWave 3 ignores the old extension_white_list):
   #
-  def extension_white_list
+  def extension_allowlist
     %w(jpg jpeg gif png)
   end
 
