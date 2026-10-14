@@ -90,10 +90,6 @@ create_file destination_root('lib/uploader.rb'), UPLOADER
 case fetch_component_choice(:orm)
 when 'mini_record'
   prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/activerecord'\n"
-when 'datamapper'
-  prepend_file destination_root('models/upload.rb'), "require 'carrierwave/datamapper'\n"
-  inject_into_file destination_root('models/upload.rb'),", :auto_validation => false\n", :after => "property :file, Text"
-  require_dependencies 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
 when 'mongoid'
   require_dependencies 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 when 'sequel'
