@@ -68,7 +68,7 @@ class Uploader < CarrierWave::Uploader::Base
   #   end
   # end
   ##
-  # Extensions which are allowed to be uploaded (CarrierWave 3 ignores the old extension_white_list):
+  # Extensions which are allowed to be uploaded (needs CarrierWave 2.2 or later):
   #
   def extension_allowlist
     %w(jpg jpeg gif png)
@@ -100,5 +100,5 @@ else
   prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/#{fetch_component_choice(:orm)}'\n"
 end
 
-require_dependencies 'carrierwave'
+require_dependencies 'carrierwave', :version => '>= 2.2'
 inject_into_file destination_root('models/upload.rb'),"   mount_uploader :file, Uploader\n", :before => 'end'
