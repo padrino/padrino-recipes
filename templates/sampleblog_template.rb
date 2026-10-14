@@ -1,5 +1,7 @@
 # Template for Sample Blog tutorial at http://www.padrinorb.com/guides/blog-tutorial
-project :test => :shoulda, :renderer => :haml, :stylesheet => :sass, :script => :jquery, :orm => :activerecord
+components = { :test => :shoulda, :renderer => :haml, :stylesheet => :sass, :script => :jquery, :orm => :activerecord }
+components[:dev] = true if options[:dev]
+project components
 
 # Default routes
 APP_INIT = <<-APP
@@ -13,15 +15,15 @@ APP_INIT = <<-APP
 APP
 inject_into_file 'app/app.rb', APP_INIT, :before => "#\n  end\n"
 
-# Generating padrino admin
-inject_into_file 'Gemfile', "gem 'bcrypt-ruby', :require => 'bcrypt'\n", :after => "# Component requirements\n"
+# Generating padrino admin (it adds bcrypt to the Gemfile, so bundle again)
 run_bundler
 generate :admin
-rake "ar:create ar:migrate seed"
+run_bundler
+rake "ar:create ar:migrate"
+rake "seed"
 
-# appending timestamps to post model
+# The post model (the generated migration already adds timestamps)
 generate :model, "post title:string body:text"
-inject_into_file 'db/migrate/002_create_posts.rb',"      t.timestamps\n",:after => "t.text :body\n"
 rake 'ar:migrate'
 
 # Generating posts controller
@@ -102,7 +104,7 @@ APPLICATION = <<-LAYOUT
 %html
   %head
     %title= [@title, "Padrino Sample Blog"].compact.join(" | ")
-    = stylesheet_link_tag 'reset', 'application'
+    = stylesheet_link_tag 'application'
     = javascript_include_tag 'jquery', 'application'
     = yield_content :include
   %body
@@ -138,5 +140,20 @@ APPLICATION = <<-LAYOUT
 LAYOUT
 create_file 'app/views/layouts/application.haml', APPLICATION
 
-get 'https://github.com/padrino/sample_blog/raw/master/public/stylesheets/reset.css', 'public/stylesheets/reset.css'
-get "https://github.com/padrino/sample_blog/raw/master/app/stylesheets/application.sass", 'app/stylesheets/application.sass'
+# Compiled to public/stylesheets/application.css by the sass component
+APPLICATION_SASS = <<-SASS
+body
+  font-family: Helvetica, Arial, sans-serif
+  margin: 0 auto
+  max-width: 960px
+#main
+  float: left
+  width: 70%
+#sidebar
+  float: right
+  width: 25%
+#footer
+  clear: both
+  padding-top: 2em
+SASS
+create_file 'app/stylesheets/application.sass', APPLICATION_SASS
