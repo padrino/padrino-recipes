@@ -39,7 +39,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - disqus: [Disqus](https://disqus.com/) commenting system via [disqus gem](https://github.com/norman/disqus).
 - dreamhost: Deploy your app on [DreamHost](https://www.dreamhost.com/).
 - exception\_notifier: Send errors through mail or/and to [redmine](http://www.redmine.org/) via [exception_notifier](https://github.com/padrino/padrino-contrib/blob/master/lib/padrino-contrib/exception_notifier.rb).
-- factory\_girl: A [library](https://github.com/thoughtbot/factory_girl) for setting up Ruby objects as test data.
+- factory\_bot: A [library](https://github.com/thoughtbot/factory_bot) for setting up Ruby objects as test data.
 - fontawesome: Installing [Font Awesome 4.7](https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0).
 - goatmail: Preview mail in the browser under `/inbox` in development mode with [goatmail](https://github.com/tyabe/goatmail).
 - heroku: Prepare app for deployment to [Heroku](https://heroku.com/).
