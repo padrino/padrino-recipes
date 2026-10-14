@@ -34,4 +34,4 @@ create_file "config/assets.yml", ASSETS_YML
 
 inject_into_file destination_root('/app/app.rb'), JAMMIT_REGISTER, :after => "register Padrino::Helpers\n"
 
-inject_into_file destination_root('config/boot.rb'), JAMMIT_HOOK, :before => "Padrino.load!"
+inject_into_file destination_root('config/boot.rb'), JAMMIT_HOOK, :before => /^Padrino\.load!$/

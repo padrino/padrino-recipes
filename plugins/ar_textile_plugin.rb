@@ -15,4 +15,4 @@
 # sudo gem install RedCloth
 #
 require_contrib('orm/active_record/textile')
-require_dependency('RedCloth')
+require_dependencies('RedCloth')

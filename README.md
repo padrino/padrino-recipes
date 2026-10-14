@@ -24,6 +24,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - access: Access Plugin via [rack-contrib](http://github.com/rack/rack-contrib/)
 - ar\_permalink: Generate permalink for a specified column on ActiveRecord.
 - ar\_permalink\_i18n: Generate permalink for a specified multi language column(s) on ActiveRecord.
+- ar\_textile: Full support to textile with ActiveRecord.
 - ar\_translate: Translate for you your ActiveRecord columns.
 - auto\_locale: Switch the I18n.locale automatically based on the URL.
 - barista: Simple, transparent [CoffeeScript](https://github.com/jashkenas/coffeescript) support.
@@ -32,6 +33,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - bootstrap: Install the latest [twitter bootstrap](https://github.com/twbs/bootstrap) files.
 - bug: (rack-bug)[http://github.com/brynary/rack-bug] debugging toolbar for Rack applications.
 - camorra: Install (ZURB Foundation 5 framework)[http://foundation.zurb.com/].
+- carrierwave: Plugin for [Carrierwave](https://github.com/carrierwaveuploader/carrierwave).
 - codehighlighter: Code highlighting via [rack-codehighlighter](https://github.com/wbzyl/rack-codehighlighter)
 - deflect: Deflect (DOS protection) via [rack-contrib](http://github.com/rack/rack-contrib/).
 - disqus: [Disqus](https://disqus.com/) commenting system via [disqus gem](https://github.com/norman/disqus).
@@ -39,7 +41,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - exception\_notifier: Send errors through mail or/and to [redmine](http://www.redmine.org/) via [exception_notifier](https://github.com/padrino/padrino-contrib/blob/master/lib/padrino-contrib/exception_notifier.rb).
 - factory\_girl: A [library](https://github.com/thoughtbot/factory_girl) for setting up Ruby objects as test data.
 - flash\_session: Middleware that help you in passing your session in the URI, when it should be in the cookie via [flash_session](https://github.com/padrino/padrino-contrib/blob/master/lib/padrino-contrib/flash_session.rb).
-- fontawesome: Installing [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
+- fontawesome: Installing [Font Awesome 4.7](https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0).
 - goatmail: Preview mail in the browser under `/inbox` in development mode with [goatmail](https://github.com/tyabe/goatmail).
 - googleanalytics: [Google Analytics](https://analytics.google.com/) via [rack-google-analytic](https://github.com/kangguru/rack-google-analytics).
 - heroku: Prepare app for deployment to [Heroku](https://heroku.com/).
@@ -52,6 +54,7 @@ $ padrino-gen plugin <name-of-the-plugin>
 - payment: Payment Plugin via [rack-payment](https://rubygems.org/gems/rack-payment/versions/0.1.4)
 - pry\_byebug: Use [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug) in Padrino. Use pry_debugger plugin for MRI 1.9.3 or older.
 - pry\_debugger: Use [pry-debugger](https://github.com/nixme/pry-debugger) in Padrino. Use pry_byebug plugin for MRI 2.0.0 or newer.
+- raphaeljs: Add [RaphaelJS](https://github.com/DmitryBaranovskiy/raphael) libraries.
 - raphy\_charts: [Raphy Charts](https://github.com/jcarver989/raphy-charts) - a RaphaelJS based HTML5/SVG charts library.
 - recaptcha: CAPTCHA verification using RECAPTCHA API via [rack-recaptcha](https://github.com/achiu/rack-recaptcha).
 - resque: Add support for the [resque](https://github.com/resque/resque) redis based background worker.
@@ -92,11 +95,8 @@ appended to the name (i.e **sampleblog_template.rb**). Included template are:
 
 ## Broken plugins
 
-- ar\_textile: Full support to textile with ActiveRecord.
 - blueprint: Install the [blueprint grid system](https://github.com/joshuaclayton/blueprint-css).
-- carrierwave: Plugin for [Carrierwave](https://github.com/carrierwaveuploader/carrierwave).
 - coderay: Code Highlighting via [rack-coderay](https://github.com/rubychan/coderay).
-- raphaeljs: Add [RaphaelJS](https://github.com/DmitryBaranovskiy/raphael) libraries.
 
 
 ## Contribute

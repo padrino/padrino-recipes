@@ -82,8 +82,10 @@ class Uploader < CarrierWave::Uploader::Base
   # end
 end
 UPLOADER
+# Generate the model first: the generator boots the app, and lib/uploader.rb
+# can't load until CarrierWave is bundled. On Mongoid, mount_uploader defines the field.
+generate :model, fetch_component_choice(:orm) == 'mongoid' ? "upload" : "upload file:text"
 create_file destination_root('lib/uploader.rb'), UPLOADER
-generate :model, "upload file:text created_at:datetime"
 
 case fetch_component_choice(:orm)
 when 'mini_record'
