@@ -88,7 +88,7 @@ generate :model, fetch_component_choice(:orm) == 'mongoid' ? "upload" : "upload 
 create_file destination_root('lib/uploader.rb'), UPLOADER
 
 case fetch_component_choice(:orm)
-when 'mini_record'
+when 'minirecord'
   prepend_file destination_root('models/upload.rb'), "require 'carrierwave/orm/activerecord'\n"
 when 'mongoid'
   require_dependencies 'carrierwave-mongoid', :require => 'carrierwave/mongoid'

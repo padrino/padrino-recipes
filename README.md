@@ -43,7 +43,6 @@ $ padrino-gen plugin <name-of-the-plugin>
 - fontawesome: Installing [Font Awesome 4.7](https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0).
 - goatmail: Preview mail in the browser under `/inbox` in development mode with [goatmail](https://github.com/tyabe/goatmail).
 - heroku: Prepare app for deployment to [Heroku](https://heroku.com/).
-- jammit: Add Asset Packaging via [jammit-sinatra](https://github.com/jacquescrocker/jammit-sinatra).
 - letter_opener: Preview mail in the browser instead of sending vim with [letter_opener](https://github.com/ryanb/letter_opener).
 - omniauth: Authentication Plugin for OAuth2, Facebook, Twitter, Campfire via [omniauth](https://github.com/intridea/omniauth/).
 - payment: Payment Plugin via [rack-payment](https://rubygems.org/gems/rack-payment/versions/0.1.4)
@@ -54,7 +53,6 @@ $ padrino-gen plugin <name-of-the-plugin>
 - resque: Add support for the [resque](https://github.com/resque/resque) redis based background worker.
 - rewrite: Rewrite Rules via [rack-rewrite](https://github.com/jtrupiano/rack-rewrite).
 - secure\_only: Run app on https via [rack-secure_only](https://github.com/spllr/rack-secure_only).
-- twitter-login: Twitter Login Authentication via [twitter-login](https://github.com/mislav/twitter-login)
 - vcr: Add [vcr](https://github.com/vcr/vcr) to your test suite.
 - will\_paginate: Add support for [will_paginate](https://github.com/mislav/will_paginate).
 - react-sinatra: Add support for [react-sinatra](https://github.com/namusyaka/react-sinatra).
