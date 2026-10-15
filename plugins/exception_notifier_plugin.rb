@@ -20,3 +20,16 @@
 #
 require_contrib('exception_notifier')
 initializer("Padrino::Contrib::ExceptionNotifier")
+# The notifier renders exceptions_page for every 404 and 500, so give it one.
+settings = "    set :exceptions_page, :errors\n"
+# It wraps the page in layouts/application, which new apps don't have yet.
+settings += "    set :exceptions_layout, false\n" if Dir[destination_root('app/views/layouts/application.*')].empty?
+inject_into_file destination_root('app/app.rb'), settings, :after => "register Padrino::Contrib::ExceptionNotifier\n"
+errors_page = {
+  'haml' => "%h1= response.status\n",
+  'slim' => "h1 = response.status\n",
+  'erb'  => "<h1><%= response.status %></h1>\n"
+}
+renderer = fetch_component_choice(:renderer).to_s
+renderer = 'erb' unless errors_page.key?(renderer)
+create_file destination_root("app/views/errors.#{renderer}"), errors_page[renderer]

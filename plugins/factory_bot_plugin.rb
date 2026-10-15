@@ -1,25 +1,25 @@
 ##
-# Add FactoryGirl to Padrino
+# Add FactoryBot to Padrino
 #
 LIB = <<-LIB
 begin
-  require 'factory_girl'
+  require 'factory_bot'
   # Sequel does not have a save! method
   if defined?(Sequel)
-    FactoryGirl.define do
+    FactoryBot.define do
       to_create { |instance| instance.save }
     end
   end
-  FactoryGirl.find_definitions
+  FactoryBot.find_definitions
 rescue LoadError
 end
 LIB
 
-create_file 'lib/factory_girl.rb', LIB
+create_file 'lib/factory_bot.rb', LIB
 
 GEMFILE = <<-GEMFILE
 group :development, :test do
-  gem 'factory_girl'
+  gem 'factory_bot'
 end
 GEMFILE
 
