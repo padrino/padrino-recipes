@@ -32,7 +32,6 @@ $ padrino-gen plugin <name-of-the-plugin>
 - better\_errors: Install the [better_errors gem](https://github.com/charliesome/better_errors).
 - bootstrap: Install the [Bootstrap](https://github.com/twbs/bootstrap) 5.3.8 files.
 - bug: (rack-bug)[http://github.com/brynary/rack-bug] debugging toolbar for Rack applications.
-- camorra: Install (ZURB Foundation 5 framework)[http://foundation.zurb.com/].
 - carrierwave: Plugin for [Carrierwave](https://github.com/carrierwaveuploader/carrierwave).
 - codehighlighter: Code highlighting via [rack-codehighlighter](https://github.com/wbzyl/rack-codehighlighter)
 - deflect: Deflect (DOS protection) via [rack-contrib](http://github.com/rack/rack-contrib/).
