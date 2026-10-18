@@ -53,7 +53,6 @@ $ padrino-gen plugin <name-of-the-plugin>
 - secure\_only: Run app on https via [rack-secure_only](https://github.com/spllr/rack-secure_only).
 - vcr: Add [vcr](https://github.com/vcr/vcr) to your test suite.
 - will\_paginate: Add support for [will_paginate](https://github.com/mislav/will_paginate).
-- react-sinatra: Add support for [react-sinatra](https://github.com/namusyaka/react-sinatra).
 
 
 If you want to contribute with a plugin please follow the convention of having `_plugin` appended to the name (i.e.
