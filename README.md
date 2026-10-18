@@ -27,7 +27,6 @@ $ padrino-gen plugin <name-of-the-plugin>
 - ar\_textile: Full support to textile with ActiveRecord.
 - ar\_translate: Translate for you your ActiveRecord columns.
 - auto\_locale: Switch the I18n.locale automatically based on the URL.
-- barista: Simple, transparent [CoffeeScript](https://github.com/jashkenas/coffeescript) support.
 - bulma: [bulma](https://bulma.io "bulma") is an open source CSS framework based on Flexbox.
 - better\_errors: Install the [better_errors gem](https://github.com/charliesome/better_errors).
 - bootstrap: Install the [Bootstrap](https://github.com/twbs/bootstrap) 5.3.8 files.

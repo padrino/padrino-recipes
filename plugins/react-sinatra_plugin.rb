@@ -22,4 +22,4 @@ require_dependencies 'react-sinatra'
 require_dependencies 'execjs'
 require_dependencies 'mini_racer'
 
-inject_into_file destination_root('app/app.rb'), REACT_SINATRA_INIT, :after => "enable :sessions\n"
+inject_into_file destination_root('app/app.rb'), REACT_SINATRA_INIT, :after => "Padrino::Application\n"
